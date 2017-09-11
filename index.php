@@ -67,6 +67,7 @@
 		</div>
 		<div class="row"><div class="col s12">
 			<div class="col s6"><h3>Mooie foto's:</h3></div>
+                <?php include "/includes/foto_query.inc.php"; ?>
 			<div class="col s6"><h3>Discord:</h3></div>
 		</div></div>
 		<div class="row">
