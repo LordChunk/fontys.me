@@ -36,7 +36,7 @@
 			<!--Navigation bar -->
 			<nav>
 				<div class="nav-wrapper">
-					<a href="#">WOP build dashboard</a>
+					<a href="#">WIP build dashboard</a>
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
 
