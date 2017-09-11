@@ -20,7 +20,7 @@
 
 
 
-  		<title>WIP build</title>
+  		<title>WIP Build</title>
 	</head>
 
 
