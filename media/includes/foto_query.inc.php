@@ -22,28 +22,30 @@ if (mysqli_num_rows($result) > 0) //Check if database has input
 
 if (mysqli_num_rows($result) > 0) 
 {
-	while ($row = mysqli_fetch_assoc($result)) 
-	{ ?>
-		<li>
-	    	<div class="collapsible-header"><i class="material-icons">insert_photo</i><?php echo $row["banner_naam"]; ?></div>
-	    	<div class="collapsible-body no-padding">
-				<div class="card no-margin">
+	while ($row = mysqli_fetch_assoc($result))
+	{
+	    if ($row["show"])
+	    {?>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">insert_photo</i><?php echo $row["banner_naam"]; ?></div>
+                <div class="collapsible-body no-padding">
+                    <div class="card no-margin">
 
-		            <div class="card-image">
-		            	<img src="<?php echo $row["foto_url"]; ?>" alt="<?php echo $row["banner_naam"]; ?> image" >
-		            </div>
-		        
-		            <div class="card-content">
-		            	<p><?php echo $row["tekst"]; ?></p>
-		            </div>
-		        
-		            <div class="card-action">
-		            	<a href="<?php echo $row["foto_url"]; ?>" download="<?php echo $row["foto_url"]; ?>">Download</a>
-		            </div>
-	        	</div>
-	    	</div>
-	    </li>
-<?php	
+                        <div class="card-image">
+                            <img src="<?php echo $row["foto_url"]; ?>" alt="<?php echo $row["banner_naam"]; ?> image" >
+                        </div>
+
+                        <div class="card-content">
+                            <p><?php echo $row["tekst"]; ?></p>
+                        </div>
+
+                        <div class="card-action">
+                            <a href="<?php echo $row["foto_url"]; ?>" download="<?php echo $row["foto_url"]; ?>">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+<?php   }
 	}
 } else 
 {
