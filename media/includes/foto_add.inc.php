@@ -28,15 +28,27 @@ if (strlen($banner_naam) > 15 || strlen($banner_naam) < 1)
 
 
 //Sql query
-$sql ="INSERT INTO foto_list (banner_naam, foto_url, tekst) VALUES ('$banner_naam', '$foto_url', '$tekst')";
+//Old SQL query
+//$sql ="INSERT INTO foto_list (banner_naam, foto_url, tekst) VALUES ('$banner_naam', '$foto_url', '$tekst')";
 
-//echo $sql;
-if (mysqli_query($conn, $sql)) 
+//Create template
+$sql = "INSERT INTO foto_list (banner_naam, foto_url, tekst) VALUES (?, ?, ?)";
+//Create prepared statement
+$stmt = mysqli_stmt_init($conn);
+//Check if prepared statement doesn't work
+if (!mysqli_stmt_prepare($stmt, $sql))
 {
-	echo "Added line <br>";
+    echo "SQL failed";
+
+    header("Location: ../#picture-add?add=false");
+    exit();
 } else {
-	echo "An error occured <br>";
+    //Bind var type to placeholders (?)
+    mysqli_stmt_bind_param($stmt, "sss", $banner_naam, $foto_url, $tekst); //set datatype to string 3 times
+    //execute query
+    mysqli_stmt_execute($stmt);
 }
+
 
 header("Location: ../#picture-add?add=true");
 
