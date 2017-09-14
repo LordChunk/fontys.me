@@ -32,6 +32,9 @@
 		<nav>
 			<div class="nav-wrapper">
 				<a href="#">Wow kijk een fancy site voor regels, super handig! </a>
+                <!--<ul class="right hide-on-med-and-down">
+                    <li><a href="http://dev.fontys.me">Check out dev build</a></li>
+                </ul>-->
 			</div>
 		</nav>
 	</div>
