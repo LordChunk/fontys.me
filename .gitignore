@@ -8,3 +8,5 @@ login/
 /media/includes/connect.inc.php
 
 !/subdomain_old/
+/media/includes/login_config.inc.php
+/subdomain_old/
