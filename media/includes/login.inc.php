@@ -45,6 +45,7 @@ $_SESSION['name'] = $oidc->requestUserInfo('name');
 $_SESSION['username'] = $oidc->requestUserInfo('preferred_username');
 $_SESSION['email'] = $oidc->requestUserInfo('email'); // needs 'email' scope
 $_SESSION['roles'] = $oidc->requestUserInfo('role'); // needs 'roles' scope
+$_SESSION['access_token'] = $oidc->getAccessToken();
 
 // Add extra info to the session
 $_SESSION['ingelogd'] = true;

@@ -10,3 +10,6 @@ login/
 !/subdomain_old/
 /media/includes/login_config.inc.php
 /subdomain_old/
+!/subdomain_old/test versie/git proof.php
+!/subdomain_old/test versie/FHICTService.php
+!/subdomain_old/.htaccess
