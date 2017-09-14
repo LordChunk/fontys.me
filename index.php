@@ -37,19 +37,19 @@
 			<nav>
 				<div class="nav-wrapper">
 					<a href="#">WIP build dashboard</a>
-					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+					<a href="../" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
 
 					<!--Normal nav bar -->
 					<ul class="right hide-on-med-and-down">
-						<li><a href="#">nav 2</a></li>
+						<li><a href="/subdomain">Sign up for fontys.me subdomain</a></li>
 						<li><a href="#">nav 3</a></li>
 						<li><a href="#">nav 4</a></li>
 					</ul>
 
 					<!--Hidden mobile nav -->
 					<ul class="side-nav" id="mobile-demo">
-						<li><a href="#">nav 2</a></li>
+						<li><a href="/subdomain">Sign up for fontys.me subdomain</a></li>
 						<li><a href="#">nav 3</a></li>
 						<li><a href="#">nav 4</a></li>
 			        </ul>
