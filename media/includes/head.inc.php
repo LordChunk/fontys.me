@@ -3,9 +3,16 @@ $title = "WIP build";
 $nav = [
     //"/" => "Home",
     "http://fontys.me" => "fontys.me",
-    "login" => "Login",
     "subdomain" => "Request a fontys.me subdomain"
 ];
+//Check if user is logged in
+if ($_SESSION[ingelogd] !== true)
+{
+    $nav = ["login.php" => "Login"];
+} else
+{
+    $nav = ["/media/includes/logout.inc.php" => "Logout"];
+}
 ?>
 <!DOCTYPE html>
 <html>
