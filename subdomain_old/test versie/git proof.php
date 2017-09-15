@@ -28,4 +28,14 @@ $result = curl_exec($ch);
 if (curl_errno($ch)) {
     exit('Error: ' . curl_error($ch));
 }
-echo "Test succesful";
+
+var_dump($result);
+echo "<br> ^result <br>";
+
+$json = json_decode($result, true);
+//var_dump($json);
+//echo "<br> ^json <br>";
+
+$errors = $json['errors'][0]["code"];
+var_dump($errors);
+echo "<br> ^errors <br>";
