@@ -30,7 +30,9 @@ if (curl_errno($ch)) {
 }
 
 
-/* result parsing
+/*  result parsing
+    https://community.cloudflare.com/t/php-ip-update-script/4672
+
 var_dump($result);
 echo "<br> ^result <br>";
 
@@ -43,5 +45,5 @@ var_dump($errors);
 echo "<br> ^errors <br>";
 */
 
-$json = json_decode($result, true)["errors"][0]["code"];
+$json = json_decode($result, true)["errors"][0]["message"];
 echo $json;
