@@ -20,8 +20,8 @@ if($_SESSION['ingelogd'] !== true){
         <form action="/media/includes/subdomain_add.inc.php" method="POST">
 
             <div class="input-field">
-                <input type="text" id="subdomein" name="subdomein" data-length="50">
-                <label for="subdomein">Subdomain</label>
+                <input type="text" id="subdomain" name="subdomain" data-length="50">
+                <label for="subdomain">Subdomain</label>
             </div>
             <div class="input-field">
                 <input type="text" id="IP" name="IP">
