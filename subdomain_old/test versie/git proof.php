@@ -29,6 +29,8 @@ if (curl_errno($ch)) {
     exit('Error: ' . curl_error($ch));
 }
 
+
+/* result parsing
 var_dump($result);
 echo "<br> ^result <br>";
 
@@ -39,3 +41,7 @@ $json = json_decode($result, true);
 $errors = $json['errors'][0]["code"];
 var_dump($errors);
 echo "<br> ^errors <br>";
+*/
+
+$json = json_decode($result, true)["errors"][0]["code"];
+echo $json;
