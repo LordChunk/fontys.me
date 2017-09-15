@@ -8,22 +8,9 @@
 session_start();
 include "connect.inc.php";
 
-//Echo all client details
-/*
-?>
-<h1>Welcome <?=$_SESSION['name']?></h1>
-<ul>
-    <?php foreach($_SESSION as $key => $value){
-        echo "<li>$key => $value</li>";
-    }?>
-</ul>
-<br><br>
-<?php
-*/
-
 //This is easier to use in sql queries
 $email = $_SESSION['email'];
-$domain = $_POST['subdomein'];
+$domain = $_POST['subdomain'];
 
 //Check if user is already registered
 $sql1 = "SELECT * FROM main WHERE email='$email'";
@@ -32,7 +19,7 @@ $result1 = mysqli_query($conn, $sql1);
 //Check for failed query
 if (!$result1){
     echo "an error occured";
-    header("location: /subdomain?success=false");
+    header("location: /subdomain?error=sql");
     exit();
 }
 
@@ -49,21 +36,24 @@ if($row == 0)
 elseif ($row !== 1)
 {
     echo "Your account has been registered twice. <br>This usually is the result of some kind of bug. <br>Please contact the developer at: j.vanooik@student.fontys.nl";
+    header("location: /subdomain?error=doubleAccount");
     exit();
 }
 
 //Check how many subdomains the user already has
 //Update query with new user in the db if they still had to be registered
-$result1 = mysqli_query($conn, $sql1);
+$result6 = mysqli_query($conn, $sql1);
+
 //Check for failed query
-if (!$result1){
+if (!$result6){
     echo "an error occured";
-    header("location: /subdomain?success=false");
+    header("location: /subdomain?error=sql");
     exit();
 }
 
-$UID = mysqli_fetch_row($result1)[0]; //<-- [0] to select first select value from $sql1 query)
-$max_domains = mysqli_fetch_row($result3)[2]; //<-- [2] to select max domains field from $sql1 query
+//Set variables for some SQL queries from some SQL queries
+$UID = mysqli_fetch_row($result6)[0]; //<-- [0] to select first select value from $sql1 query)
+$max_domains = mysqli_fetch_row($result1)[2]; //<-- [2] to select max domains field from $sql1 query
 
 
 //Use UID to see if they registered any domains
@@ -72,32 +62,33 @@ $result3 = mysqli_query($conn, $sql3);
 //Check for failed query
 if (!$result3){
     echo "an error occured";
-    header("location: /subdomain?success=false");
+    header("location: /subdomain?error=sql");
     exit();
 }
 
 //Check for row numbers (rows = amount of registered domains)
 $row = mysqli_num_rows($result3);
-if ($row >= $result3)
+if ($row >= $max_domains)
 {
     //Reached limit or is over limit
-    header("location: /subdomain?success=false");
+    header("location: /subdomain?error=limitreached");
+    exit();
 }
 else
 {
     //User is allowed to add domain, first add registered domain to database
-    $sql4 = "INSERT INTO registered_domains (UID, domain) VALUES ('$UID', $domain)";
+    $sql4 = "INSERT INTO registered_domains (UID, domain) VALUES ('$UID', '$domain')";
     $result4 = mysqli_query($conn, $sql4);
 
     //Check for failed query
     if (!$result4){
         echo "an error occured";
-       // header("location: /subdomain?success=false");
+        header("location: /subdomain?error=taken");
         exit();
     }
 
     /*Finally add the actual domain */
-    /*include "cloudflare_api.inc.php";
+    include "cloudflare_api.inc.php";
 
     $data = [
         //'{"type":"A","name":"example.com","content":"127.0.0.1","ttl":120,"proxied":false}'
@@ -120,13 +111,13 @@ else
 
     $result = curl_exec($ch);
     if (curl_errno($ch)) {
-        header("location: /subdomain?success=false?apierror=true");
+        header("location: /subdomain?error=curl");
         exit('Error: ' . curl_error($ch));
     }
 
-
-    //$json = json_decode($result, true)["errors"]/*[0]["message"]*/;
-    //var_dump($json);
+    //Error handling API
+    $json = json_decode($result, true)["errors"][0]["message"];
+    var_dump($json);
     //echo $json;
 
 }
