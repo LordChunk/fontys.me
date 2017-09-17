@@ -19,9 +19,6 @@ if ($_SESSION[ingelogd] !== true)
 <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="https://materialize.van-ooik.nl/css/materialize.min.css"  media="screen,projection"/>
-
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -34,7 +31,6 @@ if ($_SESSION[ingelogd] !== true)
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="https://materialize.van-ooik.nl/js/materialize.min.js"></script>
 
     <!--Files I didn't find on the dark web-->
     <link rel="stylesheet" type="text/css" href="./media/css/main.css">
