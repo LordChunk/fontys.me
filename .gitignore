@@ -13,3 +13,5 @@ login/
 !/subdomain_old/test versie/git proof.php
 !/subdomain_old/test versie/FHICTService.php
 !/subdomain_old/.htaccess
+
+media/includes/cloudflare_api\.inc\.php
