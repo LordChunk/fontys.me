@@ -48,7 +48,7 @@ if ($_SESSION[ingelogd] !== true)
 
 
             <!--Normal nav bar -->
-            <ul class="right hide-on-med-and-down">
+            <ul class="desktop-nav">
                 <?php foreach ($nav as $link => $tekst) {?>
                 <li><a href="<?=$link; ?>"><?=$tekst ?></a></li>
                 <?php } ?>
