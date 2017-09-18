@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "WIP build";
 $nav = [
     //"/" => "Home",
