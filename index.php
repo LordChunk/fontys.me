@@ -1,21 +1,11 @@
-<?php
-
-session_start();
-if($_SESSION['ingelogd'] !== true){
-  header('Location: login.php');
-}
-
-?>
-<html>
-<head>
-<title>OpenID Connect test page</title>
-</head>
-<body>
-<h1>Welcome <?php echo $_SESSION['name'];?></h1>
-<ul>
-  <?php foreach($_SESSION as $key => $value){
-    echo "<li>$key => $value</li>";
-  }?>
-</ul>
+<?php include "media/includes/head.inc.php"; ?>
+<!-- Body -->
+<div class="container">
+    <h1>Dit is een work in progress build van <a href="http://fontys.me">fontys.me</a>. </h1>
+    <p>Verwacht bugs enzo. Ik ben niet perfect.</p>
+    <h1>
+        CSS TEST WHOO
+    </h1>
+</div>
 </body>
 </html>

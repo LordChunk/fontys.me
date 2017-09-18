@@ -1,5 +1,5 @@
 <?php
-$title = "WIP build";
+$title = "CSS test build";
 $nav = [
     //"/" => "Home",
     "http://fontys.me" => "fontys.me",
