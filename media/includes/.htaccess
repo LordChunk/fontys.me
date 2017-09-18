@@ -1,4 +1,9 @@
-<Files connect.inc.php>
-Order Allow,Deny
-Deny from all
-</Files>
+#<Files connect.inc.php|login_config.inc.php>
+#Order Allow,Deny
+#Deny from all
+#</Files>
+
+<FilesMatch "connect\.inc\.php|login_config\.inc\.php">
+  Order allow,deny
+  Deny from all
+</FilesMatch>

@@ -71,29 +71,18 @@ $row = mysqli_num_rows($result3);
 if ($row >= $max_domains)
 {
     //Reached limit or is over limit
-    header("location: /subdomain?error=limitreached");
+    header("location: /subdomain?error=limitReached");
     exit();
 }
 else
 {
-    //User is allowed to add domain, first add registered domain to database
-    $sql4 = "INSERT INTO registered_domains (UID, domain) VALUES ('$UID', '$domain')";
-    $result4 = mysqli_query($conn, $sql4);
-
-    //Check for failed query
-    if (!$result4){
-        echo "an error occured";
-        header("location: /subdomain?error=taken");
-        exit();
-    }
-
     /*Finally add the actual domain */
     include "cloudflare_api.inc.php";
 
     $data = [
         //'{"type":"A","name":"example.com","content":"127.0.0.1","ttl":120,"proxied":false}'
         "type" => "A",
-        "name" => $_POST["subdomein"],
+        "name" => $_POST["subdomain"],
         "content" => $_POST["IP"],
         "ttl" => '1',
         "proxied" => false,
@@ -116,8 +105,28 @@ else
     }
 
     //Error handling API
-    $json = json_decode($result, true)["errors"][0]["message"];
-    var_dump($json);
-    //echo $json;
+    $response = json_decode($result, true)["errors"][0]["message"]; //Parse JSON and go to error response
+    if($response == null) //Null means no erro message value
+    {
+        //User is allowed to add domain and no API errors. Domain is safe and can be added to DB
+        $sql4 = "INSERT INTO registered_domains (UID, domain) VALUES ('$UID', '$domain')";
+        $result4 = mysqli_query($conn, $sql4);
+        //Check for failed query
+        if (!$result4){
+            echo "an error occured";
+            header("location: /subdomain?error=api");
+            exit();
+        }
+
+        //Return succes
+        echo "API did not send back any errors";
+        header("location: /subdomain?error=success");
+        exit();
+    } else
+    {
+        echo "API error: " . $response;
+        $_SESSION['api_error'] = $response;
+        header("location: /subdomain?error=api");
+    }
 
 }

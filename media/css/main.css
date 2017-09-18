@@ -3,3 +3,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.error_message{
+    color: red;
+}
+.success{
+    color: black;
+}

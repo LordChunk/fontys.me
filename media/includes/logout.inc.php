@@ -9,4 +9,5 @@
 session_start(); // You'll have to start the session to destroy it (I know, pretty strange!)
 $_SESSION = array(); // Unset all the variables
 session_destroy(); // Destroy the session
+header("location: /")
 ?>
