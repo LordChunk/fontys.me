@@ -105,11 +105,17 @@ else
     }
 
     //Error handling API
-    $response = json_decode($result, true)["errors"][0]["message"]; //Parse JSON and go to error response
-    if($response == null) //Null means no erro message value
+    $api_error = json_decode($result, true)["errors"][0]["message"]; //Parse JSON and go to error response
+    if($api_error == null) //Null means no erro message value
     {
         //User is allowed to add domain and no API errors. Domain is safe and can be added to DB
-        $sql4 = "INSERT INTO registered_domains (UID, domain) VALUES ('$UID', '$domain')";
+        /*\/SQL injection is technically possible with this method so we replace it with CF's response instead
+        $sql4 = "INSERT INTO registered_domains (UID, domain) VALUES ('$UID', '$domain')"; */
+
+        //Updated version that uses CF's api response instead of the user's input
+        $api_domain = json_decode($result, true)["result"]["name"];
+        $sql4 = "INSERT INTO registered_domains (UID, domain) VALUES ('$UID', '$api_domain')";
+
         $result4 = mysqli_query($conn, $sql4);
         //Check for failed query
         if (!$result4){
@@ -124,8 +130,8 @@ else
         exit();
     } else
     {
-        echo "API error: " . $response;
-        $_SESSION['api_error'] = $response;
+        echo "API error: " . $api_error;
+        $_SESSION['api_error'] = $api_error;
         header("location: /subdomain?error=api");
     }
 

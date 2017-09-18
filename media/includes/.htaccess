@@ -3,7 +3,15 @@
 #Deny from all
 #</Files>
 
-<FilesMatch "connect\.inc\.php|login_config\.inc\.php">
+<FilesMatch "connect\.inc\.php|login_config\.inc\.php|cloudflare_api\.inc\.php|OpenIDConnectClient\.inc\.php">
   Order allow,deny
   Deny from all
 </FilesMatch>
+
+
+#Order deny,allow
+#Deny from all
+
+#<Files "login.inc.php|logout.inc.php">
+#    Allow from all
+#</Files>
