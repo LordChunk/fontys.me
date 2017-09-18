@@ -1,17 +1,16 @@
 <?php
 $title = "CSS test build";
 $nav = [
-    //"/" => "Home",
     "http://fontys.me" => "fontys.me",
     "subdomain" => "Request a fontys.me subdomain"
 ];
 //Check if user is logged in
 if ($_SESSION[ingelogd] !== true)
 {
-    $nav = ["login.php" => "Login"];
+    $nav = $nav + ["login.php" => "Login"];
 } else
 {
-    $nav = ["/media/includes/logout.inc.php" => "Logout"];
+    $nav =  $nav +  ["/media/includes/logout.inc.php" => "Logout"];
 }
 ?>
 <!DOCTYPE html>
