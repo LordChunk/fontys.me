@@ -16,15 +16,15 @@ if ($_SESSION[ingelogd] !== true)
 <!DOCTYPE html>
 <html>
 <head>
+    <!--Fix broken icons -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <!-- Gfonts roboto-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-
-    <!--Logos-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--Materialze -->
 
@@ -32,9 +32,9 @@ if ($_SESSION[ingelogd] !== true)
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     <!--Files I didn't find on the dark web-->
-    <link rel="stylesheet" type="text/css" href="./media/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/media/css/main.css">
     <!--My own javascript stuff -->
-    <script src="../js/main.js" type="text/javascript"></script>
+    <script src="/media/js/main.js" type="text/javascript"></script>
 
     <title><?=$title?></title>
 </head>
@@ -42,22 +42,29 @@ if ($_SESSION[ingelogd] !== true)
 <div class="welcome">
     <!--Navigation bar -->
     <nav>
-        <div class="nav-wrapper">
-            <a href="/"><?=$title ?></a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <div class="mobile" id="mobile-nav">
+            <!--Hidden mobile nav -->
+            <ul class="side-nav">
+                <!-- Home button -->
+                <li><a href="/">Home</a></li>
+                <?php foreach ($nav as $link => $tekst) {?>
+                    <li><a href="<?=$link; ?>"><?=$tekst ?></a></li>
+                <?php } ?>
+                <!-- Close nav button -->
+                <li><a href="#" id="close_mobile_nav" class="nav_trigger"><i class="material-icons">close</i></a></li>
+            </ul>
+        </div>
+        <div class="desktop-nav">
+            <ul>
+                <!--<li class="left"><a href="#" data-activates="mobile-demo"><i class="material-icons">menu</i></a></li>-->
+                <li class="left" id="title">
+                    <a href="#" id="open_mobile_nav"><i class="material-icons mobile">menu</i><?=$title ?></a>
+                </li>
 
 
             <!--Normal nav bar -->
-            <ul class="desktop-nav">
                 <?php foreach ($nav as $link => $tekst) {?>
-                <li><a href="<?=$link; ?>"><?=$tekst ?></a></li>
-                <?php } ?>
-            </ul>
-
-            <!--Hidden mobile nav -->
-            <ul class="side-nav" id="mobile-demo">
-                <?php foreach ($nav as $link => $tekst) {?>
-                    <li><a href="<?=$link; ?>"><?=$tekst ?></a></li>
+                <li class="desktop"><a href="<?=$link; ?>"><?=$tekst ?></a></li>
                 <?php } ?>
             </ul>
         </div>

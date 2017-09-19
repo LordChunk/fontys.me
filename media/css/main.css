@@ -1,5 +1,119 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
 body {
     background-image: url(../images/background.png);
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
+    margin: 0;
+}
+/*Make links look nice*/
+a {
+    text-decoration: none;
+    color: #039be5;
+}
+/*make sure container elements stay in the center of the page */
+nav * {
+    color: white;
+}
+.container {
+    width: 70%;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+/*Navigation bar */
+.desktop-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ee6e73;
+}
+/*Fucking Google icons doen echt moeilijk*/
+.material-icons {
+    font-size: initial;
+}
+.desktop-nav li {
+    float: right;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+/*Vertically align Google logos*/
+.desktop-nav li i {
+    float: left;
+    margin-right: 5px;
+    line-height: 1.5;
+    vertical-align: middle;
+}
+.desktop-nav a {
+    display: block;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration: none;
+    /* Hover animation */
+    transition: background-color .3s;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+.desktop-nav a:hover {
+    background-color: #d66367;
+}
+.desktop-nav .left {
+    float: left;
+}
+/*Disable hover animation on desktop*/
+#title a:hover {
+    background-color: #ee6e73;
+}
+
+/*Mobile nav */
+.side-nav {
+    top: -281px; /*Mobile nav is hidden unless activated by user */
+}
+#mobile-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ee6e73;
+    width: 25vw;
+    /*rens' shit*/
+    position: absolute;
+    min-width: 210px;
+}
+#mobile-nav li a {
+    display: block;
+    padding: 16.5px 15px;
+    /* Hover animation */
+    transition: background-color .3s;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+#mobile-nav a:hover {
+    background-color: #d66367;
+}
+
+#close_mobile_nav {
+    text-align: right;
+}
+/*Hide mobile nav button on desktop*/
+.mobile {
+    display: none;
+}
+
+/*Mobile*/
+@media (max-width: 800px) {
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+    #title a:hover {
+        background-color: #d66367;
+    }
+    #title {
+        min-width: 210px;
+    }
 }
