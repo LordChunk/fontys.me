@@ -29,7 +29,7 @@ if ($_SESSION[ingelogd] !== true)
     <!--Materialze -->
 
     <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
     <!--Files I didn't find on the dark web-->
     <link rel="stylesheet" type="text/css" href="/media/css/main.css">
@@ -51,14 +51,14 @@ if ($_SESSION[ingelogd] !== true)
                     <li><a href="<?=$link; ?>"><?=$tekst ?></a></li>
                 <?php } ?>
                 <!-- Close nav button -->
-                <li><a href="#" id="close_mobile_nav" class="nav_trigger"><i class="material-icons">close</i></a></li>
+                <li><a id="close_mobile_nav" class="nav_trigger"><i class="material-icons">close</i></a></li>
             </ul>
         </div>
         <div class="desktop-nav">
             <ul>
                 <!--<li class="left"><a href="#" data-activates="mobile-demo"><i class="material-icons">menu</i></a></li>-->
                 <li class="left" id="title">
-                    <a href="#" id="open_mobile_nav"><i class="material-icons mobile">menu</i><?=$title ?></a>
+                    <a id="open_mobile_nav"><i class="material-icons mobile">menu</i><?=$title ?></a>
                 </li>
 
 

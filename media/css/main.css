@@ -11,6 +11,8 @@ body {
 a {
     text-decoration: none;
     color: #039be5;
+    /*For JS and Jquery links */
+    cursor: pointer;
 }
 /*make sure container elements stay in the center of the page */
 nav * {
