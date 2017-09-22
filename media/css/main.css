@@ -16,6 +16,11 @@ a {
     cursor: pointer;
 }
 /*make sure container elements stay in the center of the page */
+nav {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
+    -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),;
+}
 nav * {
     color: white;
 }

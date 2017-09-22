@@ -1,4 +1,4 @@
-<Files connect.inc.php>
-Order Allow,Deny
-Deny from all
-</Files>
+<FilesMatch "connect\.inc\.php|login_config\.inc\.php|cloudflare_api\.inc\.php|OpenIDConnectClient\.inc\.php">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
