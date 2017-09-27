@@ -46,10 +46,13 @@
             <div class="col s6">
                 <iframe src="https://discordapp.com/widget?id=349948995373891585&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
                 <br>
+                <?php
+                if ($_SESSION['ingelogd']) {
+                ?>
                 <!--Foto's toevoegen -->
                 <div class="input_field card-panel">
                     <h5 id="picture-add">Foto's toevoegen:</h5>
-                    <form action="/includes/foto_add.inc.php" method="POST">
+                    <form action="media/includes/foto_add.inc.php" method="POST">
 
                         <div class="input-field">
                             <input type="text" id="banner_naam" name="banner_naam" data-length="15">
@@ -69,6 +72,11 @@
                         </button>
                     </form>
                 </div>
+                <?php } else { ?>
+                <div>
+                    <h4>Log in om foto's toe te voegen.</h4>
+                </div>
+                <?php } ?>
             </div>
         </div>
     </div>
