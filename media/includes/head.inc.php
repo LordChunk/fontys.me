@@ -1,9 +1,8 @@
 <?php
 session_start();
-$title = "WIP build";
+$title = "Fontys.me";
 $nav = [
-    //"/" => "Home",
-    "http://fontys.me" => "fontys.me"
+    //"/" => "Home"
 ];
 //Check if user is logged in
 if ($_SESSION[ingelogd] !== true)
