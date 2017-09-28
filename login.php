@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION['ingelogd'] !== true){
-    include "media/includes/login.inc.php";
+    header('location: https://dev.fontys.me/login.php');
 } else {
     header("location: /");
 }

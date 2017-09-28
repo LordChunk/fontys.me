@@ -8,7 +8,7 @@
         <div class="col s12">
             <div class="col s6">
                 <h3>Regels:</h3>
-                <ul>
+                <lu>
                     <li>Aanwezig zijn</li>
                     <li>Communicatie aanwezigheid</li>
                     <li>Verantwoordelijkheid nemen</li>
@@ -21,7 +21,7 @@
                     <li>Ruim je rotzooi op</li>
                     <li>Zorg dat niemand last heeft van gamen</li>
                     <li>Geen Comic Sans!</li>
-                </ul>
+                </lu>
             </div>
             <div class="col s6">
                 <h4>Knaken om mijn hosting te betalen:</h4>
@@ -32,10 +32,6 @@
         </div>
     </div>
     <div class="row"><div class="col s12">
-            <div class="col s6"><h3>Mooie foto's:</h3></div>
-            <?php include "/includes/foto_query.inc.php"; ?>
-            <div class="col s6"><h3>Discord:</h3></div>
-        </div></div>
     <div class="row">
         <div class="col s12">
             <div class="col s6">

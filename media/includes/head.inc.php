@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['redirect_URL'] = "http://fontys.me". $_SERVER['REQUEST_URI'];
 $title = "Fontys.me";
 $nav = [
     //"/" => "Home"

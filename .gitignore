@@ -18,3 +18,4 @@ media/includes/cloudflare_api\.inc\.php
 /media/includes/login_verifier.inc.php
 !/media/includes/foto_query.inc.php
 /media/includes/connect-Freaze.inc.php
+/media/includes/cloudflare_api.inc.php
