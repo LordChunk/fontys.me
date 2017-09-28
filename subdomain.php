@@ -1,9 +1,11 @@
 <?php
-session_start();
-if($_SESSION['ingelogd'] !== true){
-    include "media/includes/login.inc.php";
+include "media/includes/head.inc.php";
 
-}include "media/includes/head.inc.php";?>
+if($_SESSION['ingelogd'] !== true){
+    var_dump($_SESSION['redirect_URL']);
+    //header('location: login.php');
+}
+?>
 <!-- Body -->
 <div class="container">
 
