@@ -1,5 +1,5 @@
 <?php
-include 'connect.inc.php';
+include 'connect-Hera.inc.php';
 
 $sql = "SELECT * FROM `foto_list`";
 $result = mysqli_query($conn, $sql);

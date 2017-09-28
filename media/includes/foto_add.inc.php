@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'connect.inc.php';
+include 'connect-Hera.inc.php';
 
 //echo gettype($_POST[banner_naam]);
 
