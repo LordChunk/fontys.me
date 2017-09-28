@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'connect-Hera.inc.php';
+include 'connect-Freaze.inc.php';
 
 //echo gettype($_POST[banner_naam]);
 
