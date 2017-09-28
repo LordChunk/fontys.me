@@ -1,4 +1,7 @@
 <?php
+//Temp redirect
+header('location: https://dev.fontys.me');
+
 session_start();
 $_SESSION['redirect_URL'] = "http://fontys.me". $_SERVER['REQUEST_URI'];
 $title = "Fontys.me";
