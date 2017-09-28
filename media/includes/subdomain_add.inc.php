@@ -12,6 +12,15 @@ include "connect-Hera.inc.php";
 $email = $_SESSION['email'];
 $domain = $_POST['subdomain'];
 
+//Check if user allowed email access
+if(!$email)
+{
+    echo "User disallowed email access.";
+    header("location: /subdomain?error=email");
+    exit();
+}
+
+
 //Check if user is already registered
 $sql1 = "SELECT * FROM main WHERE email='$email'";
 $result1 = mysqli_query($conn, $sql1);

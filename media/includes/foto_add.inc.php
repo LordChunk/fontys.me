@@ -15,6 +15,10 @@ if (!$_SESSION['ingelogd'])
 {
     header("Location: ../../#picture-add?add=false");
     exit();
+} elseif (!$email)
+{
+    header("Location: ../../#picture-add?add=false");
+    exit();
 }
 elseif (strlen($banner_naam) > 15 || strlen($banner_naam) < 1)
 {

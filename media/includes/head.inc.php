@@ -11,8 +11,15 @@ if ($_SESSION[ingelogd] !== true)
     $nav = $nav + ["login.php" => "Login"];
 } else
 {
-    $nav = $nav + ["subdomain" => "Request a fontys.me subdomain",
-                    "/media/includes/logout.inc.php" => "Logout"];
+    if(!$_SESSION['email'])
+    {
+        $nav = $nav + ["/media/includes/email_access.inc.php" => "Please allow email access"];
+    }
+    else
+    {
+        $nav = $nav + ["subdomain" => "Request a fontys.me subdomain",
+                "/media/includes/logout.inc.php" => "Logout"];
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -51,7 +58,6 @@ if ($_SESSION[ingelogd] !== true)
         <div class="nav-wrapper">
             <a href="/"><?=$title ?></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-
 
             <!--Normal nav bar -->
             <ul class="right hide-on-med-and-down">

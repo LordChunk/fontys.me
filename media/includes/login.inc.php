@@ -51,5 +51,9 @@ $_SESSION['access_token'] = $oidc->getAccessToken();
 $_SESSION['ingelogd'] = true;
 
 // Redirect back to the page we wanted to login too.
+if (!$_SESSION['redirect_URL'])
+{
+    $_SESSION['redirect_URL'] = "/";
+}
 header('Location: '.$_SESSION['redirect_URL']);
 ?>

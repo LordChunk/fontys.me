@@ -48,6 +48,9 @@ if($_SESSION['ingelogd'] !== true){
                         echo "An API error occurred: " .  $_SESSION['api_error'] . "<br> Please check your input and try again.";
                         $_SESSION['api_error'] = null;  //Unset value
                         break;
+                    case "email":
+                        echo "You need to allow access to your email address in order to be able to request subdomains.";
+                        break;
                     case "success":
                         echo "Your subdomain has been added successfully.";
                 }
