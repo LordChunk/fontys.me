@@ -31,20 +31,20 @@ class FHICTService {
     }
 
     protected function getBearerToken() {
-        /*if (isset($_SESSION['access_token']) && $_SESSION['access_token'] != '') {
+        if (isset($_SESSION['access_token']) && $_SESSION['access_token'] != '') {
             $accessToken = $_SESSION['access_token'];
         } else {
             $this->login();
         }
         return $accessToken;
-        */
+
 
         //Temp token
         //return "";
     }
 
     protected function login() {
-        header("location: media/includes/login.inc.php");
+        header("location: login");
     }
 }
 

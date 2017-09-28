@@ -1,4 +1,5 @@
     <?php
+    session_start();
     $title = "CSS test build";
     $nav = [
         "subdomain" => "Request a fontys.me subdomain",
@@ -11,7 +12,7 @@
         $nav = ["/login" => "Login"] + $nav;
     } else
     {
-        $nav =  $nav +  ["/media/includes/logout.inc.php" => "Logout"];
+        $nav =  ["/media/includes/logout.inc.php" => "Logout"] + $nav;
     }
     ?>
     <!DOCTYPE html>
