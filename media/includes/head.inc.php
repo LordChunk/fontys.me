@@ -8,7 +8,7 @@ $nav = [
 //Check if user is logged in
 if ($_SESSION[ingelogd] !== true)
 {
-    $nav = $nav + ["login.php" => "Login"];
+    $nav = $nav + ["login" => "Login"];
 } else
 {
     if(!$_SESSION['email'])
