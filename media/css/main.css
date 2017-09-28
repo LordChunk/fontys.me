@@ -1,0 +1,21 @@
+body {
+    background-image: url(../images/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.error_message{
+    color: red;
+}
+.success{
+    color: black;
+}
+
+.no-margin {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+* {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
