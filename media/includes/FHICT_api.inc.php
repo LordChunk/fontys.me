@@ -24,7 +24,8 @@ class FHICTService {
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
         if($httpcode != 200) {
-            $this->login();
+            //$this->login();
+            return false;
         }
         return json_decode($result);
 
@@ -34,7 +35,8 @@ class FHICTService {
         if (isset($_SESSION['access_token']) && $_SESSION['access_token'] != '') {
             $accessToken = $_SESSION['access_token'];
         } else {
-            $this->login();
+            //$this->login();
+            return false;
         }
         return $accessToken;
 
@@ -44,7 +46,9 @@ class FHICTService {
     }
 
     protected function login() {
-        header("location: login");
+        //header("location: login");
+
+        return false;
     }
 }
 

@@ -1,15 +1,16 @@
 .container {
-    /* Display next to eachother */
-    display: -webkit-box;
+    clear: left;
 }
 .block {
     align-content: center;
     border-radius: 3px;
     background-color: white;
     width: 300px;
-    min-width: 30vw;
     max-width: 70vw;
+    min-height: 250px;
     padding: 20px;
+    /*align items in rows */
+    float: left;
     /* Space between items */
     margin-right: 30px;
     margin-bottom: 30px;
@@ -21,6 +22,9 @@
 
 @media (max-width: 800px) {
     .block {
-        width: auto;
+        width: 100%;
+    }
+    .container {
+        display: block;
     }
 }

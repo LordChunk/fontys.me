@@ -6,6 +6,9 @@
         "http://dev.fontys.me" => "Developer version",
         "http://fontys.me" => "fontys.me"
     ];
+
+    $_SESSION['redirect_URL'] = $_SERVER['REQUEST_URI'];
+    
     //Check if user is logged in
     if ($_SESSION[ingelogd] !== true)
     {

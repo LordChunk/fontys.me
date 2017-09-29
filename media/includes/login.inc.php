@@ -7,6 +7,15 @@
  *
  */
 
+//Check for rejected login requests
+if ($_GET["error"] === "access_denied")
+{
+    //echo "login rejected";
+    session_start();
+    header("location: " . $_SESSION['redirect_URL']);
+    exit();
+}
+
 // Load the config file
 require(__DIR__.'/login_config.inc.php');
 
@@ -51,5 +60,5 @@ $_SESSION['access_token'] = $oidc->getAccessToken();
 $_SESSION['ingelogd'] = true;
 
 // Redirect back to the page we wanted to login too.
-header('Location: /');
+header('Location: ' . $_SESSION['redirect_URL']);
 ?>
