@@ -32,10 +32,26 @@
         </ul>
     </section>
     <section class="block">
-        <h2>Block 2</h2>
-        <p>
-
-        </p>
+        <h2>Schedule for today:</h2>
+        <table>
+            <tr>
+                <th>Subject</th><th>Start</th><th>End</th>
+            </tr>
+            <?php
+                $data = $service->getServiceData('/schedule/me?days=1')->{"data"};
+                $i = 0;
+                foreach ($data as $course)
+                {?>
+                    <tr>
+                        <td><?=$data[$i]->{"subject"}?></td>
+                        <td><?=substr($data[$i]->{"start"}, -8)?></td>
+                        <td><?=substr($data[$i]->{"end"}, -8)?></td>
+                    </tr>
+                    <?php
+                    $i++;
+                }
+            ?>
+        </table>
     </section>
 </div>
 </body>
