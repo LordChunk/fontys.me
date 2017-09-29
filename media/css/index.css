@@ -1,0 +1,22 @@
+.container {
+    /* Display next to eachother */
+    display: -webkit-box;
+}
+.block {
+    align-content: center;
+    border-radius: 3px;
+    background-color: white;
+    width: 300px;
+    min-width: 30vw;
+    max-width: 70vw;
+    padding: 20px;
+    /* Space between items */
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 800px) {
+    .block {
+        width: auto;
+    }
+}

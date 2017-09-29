@@ -3,7 +3,7 @@ console.log("Main.js loaded.");
 $( document).ready(function () {
 
     $('#close_mobile_nav').click(function () {
-        $('.side-nav').animate({"top": "-281px"}, "slow");
+        $('.side-nav').animate({"top": "-334px"}, "slow");
     });
 
     $('#open_mobile_nav').click(function () {

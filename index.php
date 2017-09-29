@@ -7,7 +7,7 @@
 <div class="container">
     <section class="block">
         <h2>Canvas to-do list:</h2>
-        <p>
+        <ul>
             <?php
             /*
              * Canvas to-do list
@@ -20,14 +20,22 @@
             $i = 0;
             foreach ($data as $course)
             {?>
-                <?=$data[$i]->{"assignment"}->{"name"} . "<br>"?>
-                <?php$i++;
+                <li>
+                    <?=$data[$i]->{"assignment"}->{"name"}; $i++;?>
+                    <a href="<?=$data[$i]->{"assignment"}->{"html_url"}?>" target="_blank">
+                        <i class="material-icons">link</i>
+                    </a>
+                </li>
+            <?php
             }
             ?>
-        </p>
+        </ul>
     </section>
     <section class="block">
         <h2>Block 2</h2>
+        <p>
+
+        </p>
     </section>
 </div>
 </body>

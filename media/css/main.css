@@ -79,7 +79,7 @@ nav * {
 
 /*Mobile nav */
 .side-nav {
-    top: -281px; /*Mobile nav is hidden unless activated by user */
+    top: -334px; /*Mobile nav is hidden unless activated by user */
 }
 #mobile-nav ul {
     list-style-type: none;

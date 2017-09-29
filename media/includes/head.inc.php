@@ -35,6 +35,10 @@
 
         <!--Files I didn't find on the dark web-->
         <link rel="stylesheet" type="text/css" href="/media/css/main.css">
+
+        <!-- Include file specific CSS -->
+        <link rel="stylesheet" type="text/css" href="/media/css<?=substr_replace($_SERVER["SCRIPT_NAME"], "css", -3);?>">
+
         <!--My own javascript stuff -->
         <script src="/media/js/main.js" type="text/javascript"></script>
 
