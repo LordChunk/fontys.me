@@ -1,4 +1,5 @@
 <?php
+header("location: http://fontys.me");
 session_start();
 $title = "Fontys.me";
 $_SESSION['redirect_URL'] = $_SERVER['REQUEST_URI'];
