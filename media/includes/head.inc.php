@@ -21,6 +21,8 @@
     <!DOCTYPE html>
     <html>
     <head>
+        <!--Custom tab colour -->
+        <meta name="theme-color" content="#ee6e73">
         <!--Fix broken icons -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
