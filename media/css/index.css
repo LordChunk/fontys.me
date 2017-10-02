@@ -36,6 +36,10 @@
 #transit_info .td_devider {
     width: 7px;
 }
+#transit_info .transit_icons {
+    font-size: 30px;
+    color: #676868;
+}
 @media (max-width: 800px) {
     .block {
         margin-right: 0;

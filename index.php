@@ -147,7 +147,6 @@
                 <td class="td_devider"/>
                 <th colspan="2">Arrival:</th>
                 <th>Bus/Train</th>
-<!--                <th>Delays</th>-->
             </tr>
             <?php
             //Loop for each bus station or train stop
@@ -195,11 +194,18 @@
 
                 <?php
                 }
-                else
-                {
-                    //echo "no transit station";
+                elseif ($step->{"travel_mode"} == "WALKING")
+                {?>
+                    <tr>
+                        <td>
+                            <i class="material-icons transit_icons">directions_walk</i>
+                        </td>
+                        <td colspan="2">
+                            <?=$step->{"html_instructions"}?>
+                        </td>
+                    </tr>
+                    <?php
                 }
-                $i++;
             }
             ?>
         </table>
