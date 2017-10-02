@@ -137,7 +137,7 @@
         </table>
         <!--Add custom values -->
         <form action="media/includes/google_nav.inc.php" method="post">
-            <h3>Customise your location:</h3>
+            <h3>Customise your journey:</h3>
             <input type="text" placeholder="Departure" name="departure"><br>
             <input type="text" placeholder="Arrival" name="arrival" value="Fontys Rachelsmolen"><br>
             <br>
