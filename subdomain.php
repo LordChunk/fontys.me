@@ -25,5 +25,5 @@ if($_SESSION['ingelogd'] !== true){
         </form>
     </div>
 </div>
-</body>
-</html>
+<?php
+include "media/includes/footer.inc.php";
