@@ -1,8 +1,10 @@
 <?php
-session_start();
+include "media/includes/head.inc.php";
+
 if($_SESSION['ingelogd'] !== true){
-    include "media/includes/login.inc.php";
-}include "media/includes/head.inc.php";?>
+    header("location: /login");
+}
+?>
 <!-- Body -->
 <div class="container">
     <div class="form_div">
