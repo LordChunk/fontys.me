@@ -152,9 +152,7 @@ nav * {
     border-radius: 3px;
     background-color: white;
     width: 300px;
-    min-width: 30vw;
     max-width: 70vw;
-    padding: 20px;
 }
 .form_div * {
     margin-top: 10px;
@@ -197,9 +195,10 @@ nav * {
     -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
     /*hover animation */
-    transition: box-shadow, -moz-box-shadow, -webkit-box-shadow 0.2s;
+    transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
 }
 .form_div .input-confirm:hover {
+    background: #2bbbad;
     -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);

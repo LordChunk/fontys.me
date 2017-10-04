@@ -45,6 +45,9 @@
     color: #676868;
 }
 @media (max-width: 800px) {
+    #transit_block {
+        overflow: scroll;
+    }
     .block {
         margin-right: 0;
         width: 100%;

@@ -20,10 +20,10 @@ if($_SESSION['ingelogd'] !== true){
 
             <div id="button_error">
                 <button class="input-confirm" type="submit" name="action">
-                <span>
-                    Request domain
-                    <i class="material-icons right">send</i>
-                </span>
+                    <span>
+                        Request domain
+                        <i class="material-icons right">send</i>
+                    </span>
                 </button>
                 <p class="error_message <?=$_GET['error']; //Custom color when successful?>">
                     <?php

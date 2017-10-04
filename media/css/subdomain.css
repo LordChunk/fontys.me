@@ -3,6 +3,10 @@
     display: flex;
     align-items: baseline;
 }
+.form_div {
+    padding: 30px;
+    min-width: 30vw;
+}
 .error_message {
     width: auto;
     color: red;
