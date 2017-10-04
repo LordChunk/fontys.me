@@ -19,12 +19,10 @@
                 {?>
                     <ul>
                         <?php
-                        //$dump = $data[0]->{"assignment"}->{"name"};
-                        //var_dump($dump);
                         foreach ($data as $todo)
                         {?>
                             <li>
-                                <?=$todo->{"assignment"}->{"name"}; $i++;?>
+                                <?=$todo->{"assignment"}->{"name"}?>
                                 <a href="<?=$todo->{"assignment"}->{"html_url"}?>" target="_blank">
                                     <i class="material-icons">link</i>
                                 </a>
@@ -142,8 +140,8 @@
             <input type="text" placeholder="Arrival" name="arrival" value="Fontys Rachelsmolen"><br>
             <br>
             Language:<br>
-            <input type="radio" name="language" value="nl" title="Nederlands">Nederlands<br>
-            <input type="radio" name="language" value="en-GB" title="English">English<br>
+            <label><input type="radio" name="language" value="nl" title="Nederlands">Nederlands</label><br>
+            <label><input type="radio" name="language" value="en-GB" title="English" checked>English</label><br>
             <input type="submit">
         </form>
     </section>

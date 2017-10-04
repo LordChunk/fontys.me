@@ -1,0 +1,18 @@
+#button_error {
+    width: auto;
+    display: flex;
+    align-items: baseline;
+}
+.error_message {
+    width: auto;
+    color: red;
+    margin-left: 30px;
+}
+@media (max-width: 1200px) {
+    #button_error {
+        display: inherit;
+    }
+    .error_message {
+        margin-left: 0;
+    }
+}

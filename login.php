@@ -4,7 +4,7 @@ if($_SESSION['ingelogd'] !== true){
 }
 
 //Start html
-include "media/includes/head.inc.php";?>
+//include "media/includes/head.inc.php";?>
 
 <!-- Body -->
 <div class="container">

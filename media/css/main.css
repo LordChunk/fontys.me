@@ -1,5 +1,6 @@
 * {
     font-family: 'Roboto', sans-serif;
+    outline: none;
 }
 body {
     background-image: url(../images/background.png);
@@ -19,7 +20,7 @@ a {
 nav {
     -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
     -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
 }
 nav * {
     color: white;
@@ -133,10 +134,10 @@ nav * {
 }
 /*Style from items*/
 .form_div input[type=text]{
-    width: 100%;
+    width: -webkit-fill-available;
     padding: 12px 20px;
     border: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgba(117, 117, 117, 0.5);
     transition: border-bottom 0.2s;
     margin-bottom: 5px;
 }
@@ -155,6 +156,9 @@ nav * {
     max-width: 70vw;
     padding: 20px;
 }
+.form_div * {
+    margin-top: 10px;
+}
 .form_div form {
     width: auto;
     height: auto;
@@ -167,4 +171,36 @@ nav * {
     margin: 0;
     font-size: x-large;
     font-weight: normal;
+}
+.form_div button {
+    height: 40px;
+}
+/*Make icon and text same size */
+.form_div .input-confirm * {
+    font-size: 1em;
+    color: white;
+    padding: 0 10px;
+}
+.form_div .input-confirm i {
+    line-height: 1;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.form_div .input-confirm {
+    min-width: fit-content;
+    cursor: pointer;
+    background: #26a69a;
+    border: 0;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+    /*hover animation */
+    transition: box-shadow, -moz-box-shadow, -webkit-box-shadow 0.2s;
+}
+.form_div .input-confirm:hover {
+    -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
 }

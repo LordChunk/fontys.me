@@ -28,7 +28,7 @@ else
     //Check for empty post values
     if ($departure == null || $arrival == null || $language == null)
     {
-        //header("location: " . $_SESSION["redirect_URL"]. "?error=empty_field");
+        header("location: " . $_SESSION["redirect_URL"]. "?error=empty_field");
         exit("Please fill in all fields");
     }
     else
