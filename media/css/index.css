@@ -66,3 +66,7 @@
 .flex-width-1 {
     flex-grow: 1;
 }
+
+#button_error p {
+    margin-bottom: 0;
+}

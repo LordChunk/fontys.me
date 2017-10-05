@@ -6,7 +6,7 @@
  * Time: 15:04
  */
 session_start();
-include "connect-Hera.inc.php";
+include "connect-Freaze.inc.php";
 
 //This is easier to use in sql queries
 $email = $_SESSION['email'];

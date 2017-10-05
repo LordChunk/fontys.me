@@ -4,6 +4,7 @@
 ?>
 <!-- Body -->
 <div class="container">
+    <!--To-do list-->
     <section class="block">
         <h2>Canvas to-do list:</h2>
 
@@ -47,6 +48,7 @@
 
             ?>
     </section>
+    <!--Schedule today-->
     <section class="block">
         <h2>Schedule for today:</h2>
         <?php
@@ -95,6 +97,8 @@
 
         ?>
     </section>
+
+    <!--Weather block-->
     <section class="block" id="weather">
         <h2>Weather:</h2>
         <div id="weather_iframe_wrapper">
@@ -106,6 +110,8 @@
             </iframe>
         </div>
     </section>
+
+    <!--Normal transit block -->
     <section class="block">
         <h2>Public transport:</h2>
         <!-- Google maps -->
@@ -163,92 +169,116 @@
                     </li>
                 </ul>
                 -->
-
-                <button class="input-confirm" type="submit" name="action">
-                    <span>
-                        Submit
-                        <i class="material-icons right">send</i>
-                    </span>
-                </button>
+                <div id="button_error">
+                    <button class="input-confirm" type="submit" name="action">
+                        <span>
+                            Submit
+                            <i class="material-icons right">send</i>
+                        </span>
+                    </button>
+                    <p class="error_message <?=$_GET['error']; //Custom color when successful?>">
+                        <?php
+                        //Error messages
+                        $error = $_GET['error'];
+                        switch ($error)
+                        {
+                            case "enable_cookies":
+                                echo "Please enable your cookies.";
+                                break;
+                            case "empty_field":
+                                echo "Please fill in all fields.";
+                                break;
+                            case "cookies_internal":
+                                echo "An internal error occurred while setting your cookies";
+                                break;
+                            case "success":
+                                echo "You journey has been stored successfully.";
+                                break;
+                        }
+                        ?>
+                    </p>
+                </div>
             </form>
         </section>
 
-        <section class="block" id="transit_block">
-            <h2>Additional transit info:</h2>
-            <?php
-            if($transit_result) {
-                ?>
-                <table id="transit_info">
-                    <tr>
-                        <th/>
-                        <th colspan="2">Departure:</th>
-                        <td class="td_devider"/>
-                        <th colspan="2">Arrival:</th>
-                        <th>Bus/Train</th>
-                    </tr>
-                    <?php
-                    //Loop for each bus station or train stop
-                    //$transit_result;
-
-                    $steps = $transit_result->{'routes'}[0]->{"legs"}[0]->{"steps"};
-                    //var_dump(json_encode($steps));
-                    $i = 0;
-                    foreach ($steps as $step) {
-                        if ($step->{"travel_mode"} == "TRANSIT") {
-                            //Bus or train row
-                            //echo "transit station";
-                            ?>
-                            <tr>
-                                <td>
-                                    <img src="<?= $step->{"transit_details"}->{"line"}->{"vehicle"}->{"icon"} ?>"/>
-                                </td>
-                                <td><?= $step->{"transit_details"}->{"departure_time"}->{"text"} ?></td>
-                                <td><?= $step->{"transit_details"}->{"departure_stop"}->{"name"} ?></td>
-                                <td class="td_devider"/>
-                                <td><?= $step->{"transit_details"}->{"arrival_time"}->{"text"} ?></td>
-                                <td><?= $step->{"transit_details"}->{"arrival_stop"}->{"name"} ?></td>
-                                <td>
-                                    <a href="
-                                        <?php
-                                    //If line specific link is available use this link instead of default link
-                                    if ($step->{"transit_details"}->{"line"}->{"url"}) {
-                                        echo $step->{"transit_details"}->{"line"}->{"url"};
-                                    } else {
-                                        echo $step->{"transit_details"}->{"line"}->{"agencies"}[0]->{"url"};
-                                    }
-                                    ?>"
-                                       target="_blank"
-                                       title="<?= $step->{"transit_details"}->{"line"}->{"agencies"}[0]->{"name"} ?>"
-                                    >
-                                        <?= $step->{"transit_details"}->{"line"}->{"short_name"} ?>
-                                    </a>
-                                </td>
-                            </tr>
-
-                            <?php
-                        } elseif ($step->{"travel_mode"} == "WALKING") {
-                            ?>
-                            <tr>
-                                <td>
-                                    <i class="material-icons transit_icons">directions_walk</i>
-                                </td>
-                                <td colspan="2">
-                                    <?= $step->{"html_instructions"} ?>
-                                </td>
-                            </tr>
-                            <?php
-                        }
-                    }
-                    ?>
-                </table>
-                <?php
-            }
-            else
-            {
-                //response for empty travel cookies
-            }
+    <!--Additional transit info block -->
+    <section class="block" id="transit_block">
+        <h2>Additional transit info:</h2>
+        <?php
+        if($transit_result) {
             ?>
-        </section>
+            <table id="transit_info">
+                <tr>
+                    <th/>
+                    <th colspan="2">Departure:</th>
+                    <td class="td_devider"/>
+                    <th colspan="2">Arrival:</th>
+                    <th>Bus/Train</th>
+                </tr>
+                <?php
+                //Loop for each bus station or train stop
+                //$transit_result;
+
+                $steps = $transit_result->{'routes'}[0]->{"legs"}[0]->{"steps"};
+                //var_dump(json_encode($steps));
+                $i = 0;
+                foreach ($steps as $step) {
+                    if ($step->{"travel_mode"} == "TRANSIT") {
+                        //Bus or train row
+                        //echo "transit station";
+                        ?>
+                        <tr>
+                            <td>
+                                <img src="<?= $step->{"transit_details"}->{"line"}->{"vehicle"}->{"icon"} ?>"/>
+                            </td>
+                            <td><?= $step->{"transit_details"}->{"departure_time"}->{"text"} ?></td>
+                            <td><?= $step->{"transit_details"}->{"departure_stop"}->{"name"} ?></td>
+                            <td class="td_devider"/>
+                            <td><?= $step->{"transit_details"}->{"arrival_time"}->{"text"} ?></td>
+                            <td><?= $step->{"transit_details"}->{"arrival_stop"}->{"name"} ?></td>
+                            <td>
+                                <a href="
+                                    <?php
+                                //If line specific link is available use this link instead of default link
+                                if ($step->{"transit_details"}->{"line"}->{"url"}) {
+                                    echo $step->{"transit_details"}->{"line"}->{"url"};
+                                } else {
+                                    echo $step->{"transit_details"}->{"line"}->{"agencies"}[0]->{"url"};
+                                }
+                                ?>"
+                                   target="_blank"
+                                   title="<?= $step->{"transit_details"}->{"line"}->{"agencies"}[0]->{"name"} ?>"
+                                >
+                                    <?= $step->{"transit_details"}->{"line"}->{"short_name"} ?>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <?php
+                    } elseif ($step->{"travel_mode"} == "WALKING") {
+                        ?>
+                        <tr>
+                            <td>
+                                <i class="material-icons transit_icons">directions_walk</i>
+                            </td>
+                            <td colspan="2">
+                                <?= $step->{"html_instructions"} ?>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                }
+                ?>
+            </table>
+            <?php
+        }
+        else
+        {
+            //response for empty travel cookies
+        }
+        ?>
+    </section>
+
 </div>
 <?php
 include "media/includes/footer.inc.php";

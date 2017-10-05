@@ -26,6 +26,12 @@ echo "Teacher abbreviation: ". $teacher . "<br>";
 
 $searchResult = $service->getServiceData('people/search/' . $teacher);
 
+/*
+ * Check for failed requests
+ * failed requests are mostly called by outdated session credentials.
+ * This is a bug which will be fixed in a later version since it is quite complicated and is an issue
+ * which only occurs if a user hasn't closed their browser for quite a long time
+ */
 if ($searchResult)
 {
     foreach ($searchResult as $member)
@@ -43,3 +49,9 @@ else
     header("location: /login");
     echo "Your query returned no results.";
 }
+
+//mail test
+
+mail('j.vanooik@student.fontys.nl', 'Testing email subject', 'Here you will put your email message');
+
+//var_dump(json_encode(ini_get_all()));

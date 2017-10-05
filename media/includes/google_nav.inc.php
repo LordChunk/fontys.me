@@ -18,7 +18,7 @@ var_dump($departure, $arrival, $language);
 if(!count($_COOKIE) > 0)
 {
     //echo "Cookies are disabled.";
-    header("location: " . $_SESSION["redirect_URL"]."?error=enableCookies");
+    header("location: " . $_SESSION["redirect_URL"]."?error=enable_cookies");
     exit("Please enable cookies for this website.");
 }
 else
@@ -42,12 +42,12 @@ else
         )
         {
             echo "All cookies were set successfully.<br>";
-            header("location: " . $_SESSION["redirect_URL"]);
+            header("location: " . $_SESSION["redirect_URL"] . "?error=success");
         }
         else
         {
-            echo "One or more errors occurred while setting the cookies";
-            header("location: " . $_SESSION["redirect_URL"]."?error=cookiesInternal");
+            echo "One or more errors occurred while setting the cookies.";
+            header("location: " . $_SESSION["redirect_URL"]."?error=cookies_internal");
             exit();
         }
     }

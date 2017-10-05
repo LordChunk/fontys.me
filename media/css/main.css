@@ -203,3 +203,26 @@ nav * {
     -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
 }
+
+/*Error handling css*/
+#button_error {
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+.error_message {
+    width: auto;
+    color: red;
+    margin-left: 30px;
+}
+.success {
+    color: black;
+}
+@media (max-width: 1200px) {
+    #button_error {
+        display: inherit;
+    }
+    .error_message {
+        margin-left: 0;
+    }
+}
