@@ -1,12 +1,12 @@
 .form_div {
-    padding: 30px;
-    min-width: 30vw;
-}
+  padding: 30px;
+  min-width: 30vw; }
+
 @media (max-width: 1200px) {
-    #button_error {
-        display: inherit;
-    }
-    .error_message {
-        margin-left: 0;
-    }
-}
+  #button_error {
+    display: inherit; }
+
+  .error_message {
+    margin-left: 0; } }
+
+/*# sourceMappingURL=subdomain.css.map */

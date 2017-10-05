@@ -69,7 +69,11 @@
                 <ul>
                     <!--<li class="left"><a href="#" data-activates="mobile-demo"><i class="material-icons">menu</i></a></li>-->
                     <li class="left" id="title">
-                        <a id="open_mobile_nav"><i class="material-icons mobile">menu</i><?=$title ?></a>
+                        <a id="open_mobile_nav">
+                            <img id="logo" src="media/images/logo.png"/>
+                            <i class="material-icons mobile">menu</i>
+                            <?=$title ?>
+                        </a>
                     </li>
 
 

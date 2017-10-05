@@ -1,72 +1,68 @@
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
 .block {
-    align-content: center;
-    border-radius: 3px;
-    background-color: white;
-    width: auto;
-    min-width: 300px;
-    max-width: 70vw;
-    min-height: 250px;
-    padding: 20px;
-    /* Space between items */
-    margin-right: 30px;
-    margin-bottom: 30px;
-}
+  align-content: center;
+  border-radius: 3px;
+  background-color: white;
+  width: auto;
+  min-width: 300px;
+  max-width: 70vw;
+  min-height: 250px;
+  padding: 20px;
+  /* Space between items */
+  margin-right: 30px;
+  margin-bottom: 30px; }
+
 .block table * {
-    padding: 3px;
-    text-align: left;
-}
+  padding: 3px;
+  text-align: left; }
+
 #weather_iframe_wrapper {
-    display: flex;
-    justify-content: center;
-}
+  pointer-events: none;
+  display: flex;
+  justify-content: center; }
+
 /*Disable mobile weather */
 #weather_iframe_wrapper #weather_iframe_mobile {
-    display: none;
-}
-
+  display: none; }
 
 /*Transit info styling */
 #transit_info .td_devider {
-    width: 7px;
-}
+  width: 7px; }
 
 #transit_info td {
-    max-width: 300px;
-}
+  max-width: 300px; }
+
 #transit_info .transit_icons {
-    font-size: 30px;
-    color: #676868;
-}
+  font-size: 30px;
+  color: #676868; }
+
 @media (max-width: 800px) {
-    #transit_block {
-        overflow: scroll;
-    }
-    .block {
-        margin-right: 0;
-        width: 100%;
-    }
-    .container {
-        justify-content: space-around;
-    }
-    /*Disable mobile weather */
-    #weather_iframe_wrapper #weather_iframe_mobile {
-        display: block;
-    }
-    #weather_iframe_wrapper #weather_iframe_desktop {
-        display: none;
-    }
-}
+  #transit_block {
+    overflow: scroll; }
+
+  .block {
+    margin-right: 0;
+    width: 100%; }
+
+  .container {
+    justify-content: space-around; }
+
+  /*Disable mobile weather */
+  #weather_iframe_wrapper #weather_iframe_mobile {
+    display: block; }
+
+  #weather_iframe_wrapper #weather_iframe_desktop {
+    display: none; } }
 .flex-width-1 {
-    flex-grow: 1;
-}
+  flex-grow: 1; }
 
 #button_error p {
-    margin-bottom: 0;
-}
+  margin-bottom: 0; }
+
+/*# sourceMappingURL=index.css.map */

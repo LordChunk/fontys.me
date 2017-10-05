@@ -101,14 +101,16 @@
     <!--Weather block-->
     <section class="block" id="weather">
         <h2>Weather:</h2>
-        <div id="weather_iframe_wrapper">
-            <iframe id="weather_iframe_desktop" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2b&voor=1"
-                    scrolling=no width=330 height=330 frameborder=no>
-            </iframe>
-            <iframe id="weather_iframe_mobile" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2&voor=1"
-                    scrolling=no width=256 height=256 frameborder=no>
-            </iframe>
-        </div>
+        <a href="https://buienradar.nl/nederland/neerslag/zoom/3uurs?lat=51.44083&lon=5.47778" target="_blank">
+            <div id="weather_iframe_wrapper">
+                <iframe id="weather_iframe_desktop" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2b&voor=1"
+                        scrolling=no width=330 height=330 frameborder=no>
+                </iframe>
+                <iframe id="weather_iframe_mobile" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2&voor=1"
+                        scrolling=no width=256 height=256 frameborder=no>
+                </iframe>
+            </div>
+        </a>
     </section>
 
     <!--Normal transit block -->
