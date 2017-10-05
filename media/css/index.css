@@ -17,27 +17,23 @@
   /* Space between items */
   margin-right: 30px;
   margin-bottom: 30px; }
-
-.block table * {
-  padding: 3px;
-  text-align: left; }
+  .block table * {
+    padding: 3px;
+    text-align: left; }
 
 #weather_iframe_wrapper {
   pointer-events: none;
   display: flex;
-  justify-content: center; }
-
-/*Disable mobile weather */
-#weather_iframe_wrapper #weather_iframe_mobile {
-  display: none; }
+  justify-content: center;
+  /*Disable mobile weather */ }
+  #weather_iframe_wrapper #weather_iframe_mobile {
+    display: none; }
 
 /*Transit info styling */
 #transit_info .td_devider {
   width: 7px; }
-
 #transit_info td {
   max-width: 300px; }
-
 #transit_info .transit_icons {
   font-size: 30px;
   color: #676868; }

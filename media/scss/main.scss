@@ -21,12 +21,12 @@ a {
   height: 1em;
 }
 nav {
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
-  -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
-}
-nav * {
-  color: white;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  * {
+	color: white;
+  }
 }
 .container {
   width: 70%;
@@ -34,48 +34,50 @@ nav * {
   margin-top: 20px;
   max-width: 1280px;
 }
-
-/*Navigation bar */
-.desktop-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #ee6e73;
-}
 /*Fucking Google icons doen echt moeilijk*/
 .material-icons {
   font-size: initial;
 }
-.desktop-nav li {
-  float: right;
-  line-height: 1.5;
-  vertical-align: middle;
-}
+/*Navigation bar */
+.desktop-nav{
+  ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #ee6e73;
+  }
+  li {
+	float: right;
+	line-height: 1.5;
+	vertical-align: middle;
+  }
 
-/*Vertically align Google logos*/
-.desktop-nav li i {
-  float: left;
-  margin-right: 5px;
-  line-height: 1.5;
-  vertical-align: middle;
+  /*Vertically align Google logos*/
+  li i {
+	float: left;
+	margin-right: 5px;
+	line-height: 1.5;
+	vertical-align: middle;
+  }
+  a {
+	display: block;
+	text-align: center;
+	padding: 14px 15px;
+	text-decoration: none;
+	/* Hover animation */
+	transition: background-color .3s;
+	transition-property: background-color;
+	transition-duration: 0.3s;
+  }
+  a:hover {
+	background-color: #d66367;
+  }
+  .left {
+	float: left;
+  }
 }
-.desktop-nav a {
-  display: block;
-  text-align: center;
-  padding: 14px 15px;
-  text-decoration: none;
-  /* Hover animation */
-  transition: background-color .3s;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-}
-.desktop-nav a:hover {
-  background-color: #d66367;
-}
-.desktop-nav .left {
-  float: left;
-}
+//Stop desktop-nav
 /*Disable hover animation on desktop*/
 #title a:hover {
   background-color: #ee6e73;
@@ -85,26 +87,29 @@ nav * {
 .side-nav {
   top: -334px; /*Mobile nav is hidden unless activated by user */
 }
-#mobile-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #ee6e73;
-  width: 25vw;
-  /*rens' shit*/
-  position: absolute;
-  min-width: 210px;
-}
-#mobile-nav li a {
-  display: block;
-  padding: 16.5px 15px;
-  /* Hover animation */
-  transition: background-color .3s;
-  transition-property: background-color;
-  transition-duration: 0.3s;
-}
-#mobile-nav a:hover {
-  background-color: #d66367;
+
+#mobile-nav {
+  ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #ee6e73;
+	width: 25vw;
+	/*rens' shit*/
+	position: absolute;
+	min-width: 210px;
+  }
+  li a {
+	display: block;
+	padding: 16.5px 15px;
+	/* Hover animation */
+	transition: background-color .3s;
+	transition-property: background-color;
+	transition-duration: 0.3s;
+  }
+  a:hover {
+	background-color: #d66367;
+  }
 }
 
 #close_mobile_nav {
@@ -117,96 +122,105 @@ nav * {
 /*Mobile*/
 @media (max-width: 800px) {
   .mobile {
-    display: block;
+	display: block;
   }
   .desktop {
-    display: none;
+	display: none;
   }
   #title a:hover {
-    background-color: #d66367;
+	background-color: #d66367;
   }
   #title {
-    min-width: 210px;
+	min-width: 210px;
   }
   .container {
-    width: 90%;
+	width: 90%;
   }
   body {
-    background-image: url("../images/background_mobile.png");
+	background-image: url("../images/background_mobile.png");
   }
 }
 /*Style from items*/
-.form_div input[type=text]{
-  width: -webkit-fill-available;
-  padding: 12px 20px;
-  border: 0;
-  border-bottom: 2px solid rgba(117, 117, 117, 0.5);
-  transition: border-bottom 0.2s;
-  margin-bottom: 5px;
-}
-/*input interaction animations*/
-.form_div input:focus {
-  border: 0;
-  border-bottom: 2px solid #26A69A;
-  outline:none;
-}
 .form_div {
   align-content: center;
   border-radius: 3px;
   background-color: white;
   width: 300px;
   max-width: 70vw;
-}
-.form_div * {
-  margin-top: 10px;
-}
-.form_div form {
-  width: auto;
-  height: auto;
-}
-.input-field {
-  width: 90%;
-}
-/*Custom styling for form header*/
-.form_div .form_header {
-  margin: 0;
-  font-size: x-large;
-  font-weight: normal;
-}
-.form_div button {
-  height: 40px;
-}
-/*Make icon and text same size */
-.form_div .input-confirm * {
-  font-size: 1em;
-  color: white;
-  padding: 0 10px;
-}
-.form_div .input-confirm i {
-  line-height: 1;
-  vertical-align: middle;
-  margin: 0;
-}
 
-.form_div .input-confirm {
-  min-width: fit-content;
-  cursor: pointer;
-  background: #26a69a;
-  border: 0;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-  /*hover animation */
-  transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
-}
-.form_div .input-confirm:hover {
-  background: #2bbbad;
-  -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
-}
+  * {
+	margin-top: 10px;
+  }
 
+  input[type=text] {
+	width: -webkit-fill-available;
+	padding: 12px 20px;
+	border: 0;
+	border-bottom: 2px solid rgba(117, 117, 117, 0.5);
+	transition: border-bottom 0.2s;
+	margin-bottom: 5px;
+  }
+
+  /*input interaction animations*/
+  input:focus {
+	border: 0;
+	border-bottom: 2px solid #26A69A;
+	outline: none;
+  }
+
+  form {
+	width: auto;
+	height: auto;
+  }
+
+  .input-field {
+	width: 90%;
+  }
+
+  /*Custom styling for form header*/
+  .form_header {
+	margin: 0;
+	font-size: x-large;
+	font-weight: normal;
+  }
+
+  button {
+	height: 40px;
+  }
+
+  /*Make icon and text same size */
+  .input-confirm * {
+	font-size: 1em;
+	color: white;
+	padding: 0 10px;
+  }
+
+  .input-confirm i {
+	line-height: 1;
+	vertical-align: middle;
+	margin: 0;
+  }
+
+  .input-confirm {
+	min-width: fit-content;
+	cursor: pointer;
+	background: #26a69a;
+	border: 0;
+	border-radius: 2px;
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+	-moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+	/*hover animation */
+	transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
+  }
+
+  .input-confirm:hover {
+	background: #2bbbad;
+	-webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+  }
+}
 /*Error handling css*/
 #button_error {
   width: auto;
