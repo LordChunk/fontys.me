@@ -218,11 +218,3 @@ nav * {
 .success {
     color: black;
 }
-@media (max-width: 1200px) {
-    #button_error {
-        display: inherit;
-    }
-    .error_message {
-        margin-left: 0;
-    }
-}
