@@ -748,4 +748,6 @@ $email_body = '
     </html>
 ';
 
+var_dump($email_body);
+
 echo "email body test output <br>";

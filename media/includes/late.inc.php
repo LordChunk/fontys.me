@@ -20,12 +20,14 @@ $teacher = $schedule->{"data"}[0]->{"teacherAbbreviation"};
 
 $searchResult = $service->getServiceData('people/search/' . $teacher);
 
+
 /*
  * Check for failed requests
  * failed requests are mostly called by outdated session credentials.
  * This is a bug which will be fixed in a later version since it is quite complicated and is an issue
  * which only occurs if a user hasn't closed their browser for quite a long time
  */
+
 if ($searchResult)
 {
     foreach ($searchResult as $member)
@@ -49,7 +51,7 @@ $student_name = $_SESSION["name"];
 
 //Define reason and time vars
 $reason = htmlspecialchars($_POST["reason"]);
-$time = htmlspecialchars($_POST["time"]);
+$time = htmlspecialchars($_POST["time"] . "");
 
 //Check if required info isn't empty
 
@@ -61,7 +63,6 @@ if (!$student_name || !$student_email)
     header("Location: /late?error=empty_time");
     exit();
 }
-
 
 //Get body var
 if(include "mail/email_body.inc.php")
@@ -86,12 +87,11 @@ else
 }
 //Setup email
 
-
 $mail->Body = $email_body;
 
 echo "passed body loader";
 
-$mail->Subject = "Telaat melding: ". $student_name;
+$mail->Subject = "Te laat melding: ". $student_name;
 
 
 //$mail->addAddress("j.vanooik@student.fontys.nl");
