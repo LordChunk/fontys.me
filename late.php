@@ -39,24 +39,23 @@ if($_SESSION['ingelogd'] !== true){
                         case "login_timeout":
                             echo "Your session timed out, please log in and out and try again.";
                             break;
-                        case "sql":
-                            echo "An error occurred while executing an SQL query. <br>Please contact the developer at: j.vanooik@student.fontys.nl.";
+                        case "email_name":
+                            echo "Please allow email access when you log in.<br> To fix this logout and log back in.";
                             break;
-                        case "doubleAccount":
-                            echo "Your email is registered twice in our database. <br>Please contact the developer at: j.vanooik@student.fontys.nl.";
+                        case "empty_time":
+                            echo "Your time input was invalid.";
                             break;
-                        case "limitReached":
-                            echo "You have reached your domain registration limit.";
+                        case "body_fetch":
+                            echo "An error occurred while loading the email content.";
                             break;
-                        case "curl":
-                            echo "An error occurred while executing CURL. <br>Please contact the developer at: j.vanooik@student.fontys.nl.";
+                        case "credentials_fetch":
+                            echo "An error occurred while loading the email settings.";
                             break;
-                        case "api":
-                            echo "An API error occurred: " .  $_SESSION['api_error'] . "<br> Please check your input and try again.";
-                            $_SESSION['api_error'] = null;  //Unset value
+                        case "email_sender":
+                            echo "An error occurred while sending the email";
                             break;
                         case "success":
-                            echo "Your subdomain has been added successfully.";
+                            echo "Your email was sent successfully, a copy of the email was send to your school address as well.";
                     }
                     ?>
                 </p>
