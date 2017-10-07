@@ -59,6 +59,10 @@ $_SESSION['access_token'] = $oidc->getAccessToken();
 // Add extra info to the session
 $_SESSION['ingelogd'] = true;
 
+//Add session timeout (the API server has a timeout but this isn't reported to the server or documented)
+$_SESSION["timeout"] = time();
+
+
 // Redirect back to the page we wanted to login too.
 header('Location: ' . $_SESSION['redirect_URL']);
 ?>

@@ -2,10 +2,15 @@
     session_start();
     $title = "CSS test build";
     $nav = [
-        "subdomain" => "Request a fontys.me subdomain",
-        'late' => "I'm late email service"
     ];
 
+    //Check if session is time out
+    //Timeout is on 30 minutes
+    if ($_SESSION['timeout'] !== null && $_SESSION['timeout'] + 30 * 60 < time()) {
+        header("location: logout");
+    }
+
+    //Redirect link for login and such
     $_SESSION['redirect_URL'] = $_SERVER['REQUEST_URI'];
     
     //Check if user is logged in
@@ -14,7 +19,9 @@
         $nav = ["/login" => "Login"] + $nav;
     } else
     {
-        $nav =  ["/media/includes/logout.inc.php" => "Logout"] + $nav;
+        $nav =  ["logout" => "Logout",
+                "subdomain" => "Request a fontys.me subdomain",
+                'late' => "I'm late email service"] + $nav;
     }
     ?>
     <!DOCTYPE html>
