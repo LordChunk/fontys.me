@@ -50,7 +50,7 @@ session_start();
 // Save some information in a session
 // (given the right permission) you can find which information you can request here
 // https://tas.fhict.nl/identity/.well-known/openid-configuration
-$_SESSION['name'] = $oidc->requestUserInfo('name');
+$_SESSION['name'] = str_ireplace(",", ", ", $oidc->requestUserInfo('name'));  //This adds a bloody " " in between the comma and the surname
 $_SESSION['username'] = $oidc->requestUserInfo('preferred_username');
 $_SESSION['email'] = $oidc->requestUserInfo('email'); // needs 'email' scope
 $_SESSION['roles'] = $oidc->requestUserInfo('role'); // needs 'roles' scope

@@ -194,7 +194,7 @@
                                 echo "An internal error occurred while setting your cookies";
                                 break;
                             case "success":
-                                echo "You journey has been stored successfully.";
+                                echo "Your journey has been stored successfully.";
                                 break;
                         }
                         ?>
