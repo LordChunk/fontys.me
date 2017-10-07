@@ -3,8 +3,7 @@
     $title = "CSS test build";
     $nav = [
         "subdomain" => "Request a fontys.me subdomain",
-        "http://dev.fontys.me" => "Developer version",
-        "http://fontys.me" => "fontys.me"
+        'late' => "I'm late email service"
     ];
 
     $_SESSION['redirect_URL'] = $_SERVER['REQUEST_URI'];

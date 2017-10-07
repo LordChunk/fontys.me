@@ -16,3 +16,4 @@ login/
 
 media/includes/cloudflare_api\.inc\.php
 /media/includes/google_maps_api.inc.php
+/media/includes/mail/mail_credentials.inc.php
