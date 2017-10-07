@@ -668,8 +668,8 @@ $email_body = '
     
                                                         <h1>Beste '. $teacher_name . ',</h1>
     
-                                                        <p>Het spijt mij u te moeten mededelen dat ik vandaag niet tijdig aanwezig kan zijn in uw les.<br> Ik hoop rond [Insert_time] aanwezig te zijn.<br> &nbsp;
-                                                            <br> Reden: [insert_reason_field]</p>
+                                                        <p>Het spijt mij u te moeten mededelen dat ik vandaag niet tijdig aanwezig kan zijn in uw les.<br> Ik hoop rond ' . $time . ' aanwezig te zijn.<br> &nbsp;
+                                                            <br> Reden: '. $reason .'</p>
                                                         <p>Met vriendelijke groet,<br>
                                                             '. $student_name .'
                                                         </p>
@@ -748,4 +748,4 @@ $email_body = '
     </html>
 ';
 
-//echo $email_body;
+echo "email body test output <br>";

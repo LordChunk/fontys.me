@@ -36,8 +36,8 @@ if($_SESSION['ingelogd'] !== true){
                     $error = $_GET['error'];
                     switch ($error)
                     {
-                        case "taken":
-                            echo "Sorry this domain is taken.";
+                        case "login_timeout":
+                            echo "Your session timed out, please log in and out and try again.";
                             break;
                         case "sql":
                             echo "An error occurred while executing an SQL query. <br>Please contact the developer at: j.vanooik@student.fontys.nl.";

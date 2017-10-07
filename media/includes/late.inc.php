@@ -14,14 +14,34 @@ $service = new FHICTService();
 //Fetch today's schedule
 $schedule = $service->getServiceData('/schedule/me');
 
+
 //get first lesson and teacherAbbreviation
-foreach ($schedule->{"data"} as $day)
-
-    $teacher = $schedule->{"data"}[0]->{"teacherAbbreviation"};
-
-//echo "Teacher abbreviation: ". $teacher . "<br>";
+$teacher = $schedule->{"data"}[0]->{"teacherAbbreviation"};
 
 $searchResult = $service->getServiceData('people/search/' . $teacher);
+
+/*
+ * Check for failed requests
+ * failed requests are mostly called by outdated session credentials.
+ * This is a bug which will be fixed in a later version since it is quite complicated and is an issue
+ * which only occurs if a user hasn't closed their browser for quite a long time
+ */
+if ($searchResult)
+{
+    foreach ($searchResult as $member)
+    {
+        if($member->{"personalTitle"} == $teacher)
+        {
+            $teacher_email = $member->{"mail"};
+            $teacher_name = $member->{"givenName"} . " " . $member->{"surName"};
+        }
+    }
+}
+else
+{
+    header("location: /late?error=login_timeout");
+    exit();
+}
 
 //Define student var
 $student_email = $_SESSION['email'];
@@ -37,61 +57,48 @@ if (!$student_name || !$student_email)
 {
     header("location: /late?error=email_name");
     exit();
-} elseif (!$_POST["time"])
-{
+} else if (!$_POST["time"]){
     header("Location: /late?error=empty_time");
     exit();
 }
 
 
-/*
- * Check for failed requests
- * failed requests are mostly called by outdated session credentials.
- * This is a bug which will be fixed in a later version since it is quite complicated and is an issue
- * which only occurs if a user hasn't closed their browser for quite a long time
- */
-if ($searchResult)
+//Get body var
+if(include "mail/email_body.inc.php")
 {
-    foreach ($searchResult as $member)
-    {
-        if($member->{"personalTitle"} == $teacher)
-        {
-            //Define teacher vars
-            $teacher_email = $member->{"mail"};
-            $teacher_name = $member->{"givenName"}. " " . $member->{"surName"};
-        }
-    }
+    echo "email body loaded properly <br>"; //You have to output something and !include throws and error
 }
 else
-{
-    header("location: /late?error=login_timeout");
-    exit();
-}
-
-//Get body var
-if(!require "mail/email_body.inc.php")
 {
     header("location: /late?error=body_fetch");
     exit();
 }
 
 //Fetch credentials
-if (!require  "mail/mail_credentials.inc.php")
+if(include "mail/mail_credentials.inc.php")
+{
+    echo "email creds loaded properly <br>"; //You have to output something and !include throws and error
+}
+else
 {
     header("location: /late?error=credentials_fetch");
     exit();
 }
-
 //Setup email
 
 
 $mail->Body = $email_body;
 
+echo "passed body loader";
 
 $mail->Subject = "Telaat melding: ". $student_name;
 
 
-$mail->addAddress("j.vanooik@student.fontys.nl");
+//$mail->addAddress("j.vanooik@student.fontys.nl");
+//$mail->addAddress("meowingdalmatian@protonmail.com");
+//$mail->addAddress($teacher_email);
+$mail->addAddress($student_email);
+
 
 //final
 //$mail->addAddress($teacher_address);
@@ -108,3 +115,8 @@ else
     header("location: /late?error=email_sender");
     exit();
 }
+
+
+echo "<br><br><br>We made it !<br>";
+
+header("location: /late?error=success");
