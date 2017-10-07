@@ -9,16 +9,17 @@ if($_SESSION['ingelogd'] !== true){
 <div class="container">
     <div class="form_div">
         <h5 class="form_header">A bit late? Don't worry I've got you covered.</h5>
-        <form action="/media/includes/subdomain_add.inc.php" method="POST">
+        <form action="/media/includes/late.inc.php" method="POST" id="late_form">
 
             <div class="input-field">
-                <span>When do you expect to be in class?</span>
-                <input type="time" id="time" name="subdomain" placeholder="8:45">
+                <br>
+                <span>When do you expect to be in class?</span><br>
+                <input type="time" id="time" name="time" placeholder="8:45" required>
                 <!--<label for="subdomain">Subdomain</label>-->
             </div>
             <div class="input-field">
-                <textarea id="reason" name="reason" placeholder="Reason (optional)"></textarea>
-                <input type="text" id="reason" name="reason" placeholder="Reason (optional)">
+                <span>Reason (optional):</span><br>
+                <textarea form="late_form" id="reason" name="reason" placeholder="Dentist"></textarea>
                 <!--<label for="IP">IP (IPv4)</label>-->
             </div>
 

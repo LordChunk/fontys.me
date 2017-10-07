@@ -152,7 +152,7 @@ nav {
 	margin-top: 10px;
   }
 
-  input[type=text] {
+  input, textarea {
 	width: -webkit-fill-available;
 	padding: 12px 20px;
 	border: 0;
@@ -160,9 +160,14 @@ nav {
 	transition: border-bottom 0.2s;
 	margin-bottom: 5px;
   }
-
+  textarea {
+    resize: vertical;
+  }
+  input[type=time]{
+    width: auto;
+  }
   /*input interaction animations*/
-  input:focus {
+  input:focus, textarea:focus {
 	border: 0;
 	border-bottom: 2px solid #26A69A;
 	outline: none;

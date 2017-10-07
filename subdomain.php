@@ -12,11 +12,11 @@ if($_SESSION['ingelogd'] !== true){
         <form action="/media/includes/subdomain_add.inc.php" method="POST">
 
             <div class="input-field">
-                <input type="text" id="subdomain" name="subdomain" placeholder="Subdomain" data-length="50">
+                <input type="text" id="subdomain" name="subdomain" placeholder="Subdomain" data-length="50" required>
                 <!--<label for="subdomain">Subdomain</label>-->
             </div>
             <div class="input-field">
-                <input type="text" id="IP" name="IP" placeholder="IP (IPv4)">
+                <input type="text" id="IP" name="IP" placeholder="IP (IPv4)" required>
                 <!--<label for="IP">IP (IPv4)</label>-->
             </div>
 
