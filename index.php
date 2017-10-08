@@ -6,7 +6,7 @@
 <div class="container">
     <!--To-do list-->
     <section class="block">
-        <h2>Canvas to-do list:</h2>
+        <h1>Canvas to-do list:</h1>
 
             <?php
             /*
@@ -50,7 +50,7 @@
     </section>
     <!--Schedule today-->
     <section class="block">
-        <h2>Schedule for today:</h2>
+        <h1>Schedule for today:</h1>
         <?php
         /*
          * Schedule today
@@ -100,7 +100,7 @@
 
     <!--Weather block-->
     <section class="block" id="weather">
-        <h2>Weather:</h2>
+        <h1>Weather:</h1>
         <a href="https://buienradar.nl/nederland/neerslag/zoom/3uurs?lat=51.44083&lon=5.47778" target="_blank">
             <div id="weather_iframe_wrapper">
                 <iframe id="weather_iframe_desktop" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2b&voor=1"
@@ -115,7 +115,7 @@
 
     <!--Normal transit block -->
     <section class="block">
-        <h2>Public transport:</h2>
+        <h1>Public transport:</h1>
         <!-- Google maps -->
         <?php
         include "media/includes/google_maps_api.inc.php";
@@ -205,7 +205,7 @@
 
     <!--Additional transit info block -->
     <section class="block" id="transit_block">
-        <h2>Additional transit info:</h2>
+        <h1>Additional transit info:</h1>
         <?php
         if($transit_result) {
             ?>

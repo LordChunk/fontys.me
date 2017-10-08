@@ -1,7 +1,8 @@
 <?php
 include "media/includes/head.inc.php";
 
-if($_SESSION['ingelogd'] !== true){
+                                    /*Temp admin restriction*/
+if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
     header("location: /login");
 }
 ?>
