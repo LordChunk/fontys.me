@@ -86,7 +86,7 @@ nav {
   width: 25vw;
   /*rens' shit*/
   position: absolute;
-  min-width: 210px; }
+  min-width: 279.719px; }
 #mobile-nav li a {
   display: block;
   padding: 16.5px 15px;
@@ -116,7 +116,7 @@ nav {
     background-color: #d66367; }
 
   #title {
-    min-width: 210px; }
+    min-width: 279.719px; }
 
   .container {
     width: 90%; }

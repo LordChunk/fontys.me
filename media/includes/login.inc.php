@@ -63,6 +63,37 @@ $_SESSION['ingelogd'] = true;
 $_SESSION["timeout"] = time();
 
 
+
+//Add new users to database
+include "connect-Freaze.inc.php";
+
+//This is easier to use in sql queries
+$email = $_SESSION['email'];
+
+//Check if user is already registered
+$sql1 = "SELECT * FROM main WHERE email='$email'";
+$result = mysqli_query($conn, $sql1);
+
+//Check for failed query
+if (!$result){
+    echo "an error occured";
+    header('Location: ' . $_SESSION['redirect_URL'] . "?error=db");
+    exit();
+}
+
+//Get no. of rows (Should be 0 for unregistered user and 1 for registered user)
+$row = mysqli_num_rows($result);
+
+if($row == 0)
+{
+    //Register new user
+    $sql2 = "INSERT INTO main (email, max_domains) VALUES ('$email', 1)";
+    $result2 = mysqli_query($conn, $sql2);
+    echo "Registered new user";
+}
+
+
+
 // Redirect back to the page we wanted to login too.
 header('Location: ' . $_SESSION['redirect_URL']);
 ?>
