@@ -64,8 +64,44 @@ if (!$student_name || !$student_email)
     exit();
 }
 
-//Get body var
-if(include "mail/email_body.inc.php")
+//Old email fetch method
+
+////Get body var
+//if(include "mail/email_body.inc.php")
+//{
+//    echo "email body loaded properly <br>"; //You have to output something and !include throws and error
+//}
+//else
+//{
+//    header("location: /late?error=body_fetch");
+//    exit();
+//}
+
+
+//New email fetch method
+$data = [
+    "teacher_name" => $teacher_name,
+    "student_name" => $student_name,
+    "student_email" => $student_email,
+    "reason" => $reason,
+    "time" => $time
+];
+
+//Check for https
+$prefix = $_SERVER['HTTPS'] ? 'https://' : 'http://';
+
+//Direct path
+$ch = curl_init($prefix . $_SERVER['HTTP_HOST']. '/media/includes/email_body.inc.php');
+
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_USE_SSL, true);
+
+
+$email_body = curl_exec($ch);
+
+if($email_body)
 {
     echo "email body loaded properly <br>"; //You have to output something and !include throws and error
 }
@@ -74,6 +110,8 @@ else
     header("location: /late?error=body_fetch");
     exit();
 }
+
+
 
 //Fetch credentials
 if(include "mail/mail_credentials.inc.php")
@@ -91,8 +129,8 @@ $mail->Body = $email_body;
 
 echo "passed body loader";
 
-$mail->Subject = "Te laat melding: ". $student_name;
 
+$mail->Subject = "Te laat melding: ". $student_name;
 
 //$mail->addAddress("j.vanooik@student.fontys.nl");
 //$mail->addAddress("meowingdalmatian@protonmail.com");
