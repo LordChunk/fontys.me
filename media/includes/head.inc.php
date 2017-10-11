@@ -52,7 +52,19 @@
         <!-- Include file specific CSS -->
         <link rel="stylesheet" type="text/css" href="/media/css<?=substr_replace($_SERVER["SCRIPT_NAME"], "css", -3);?>">
 
-
+        <!--OneSignal-->
+        <link rel="manifest" href="/manifest.json">
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+        <script>
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(["init", {
+                appId: "d42d6e98-3d75-4968-bdf0-1cb00817fba3",
+                autoRegister: false,
+                notifyButton: {
+                    enable: true /* Set to false to hide */
+                }
+            }]);
+        </script>
 
         <title><?=$title?></title>
     </head>
