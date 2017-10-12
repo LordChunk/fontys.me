@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     //Navbar animation
     $('#close_mobile_nav').click(function () {
-        $('.side-nav').animate({"top": "-334px"}, "slow");
+        $('.side-nav').animate({"top": "-10000px"}, "slow");
     });
 
     $('#open_mobile_nav').click(function () {
