@@ -1,7 +1,10 @@
-.form_div {
-    padding: 30px;
-    min-width: 30vw;
-}
+@import "colour";
+
+//.form_div {
+//    padding: 30px;
+//    min-width: 30vw;
+//}
+
 @media (max-width: 1200px) {
     #button_error {
         display: inherit;
@@ -12,4 +15,10 @@
 }
 .input-confirm {
     margin-top: 0;
+}
+#email_explanation_block {
+    //Only for desktop setting
+    @media (min-width: 800px) {
+        width: 40%;
+    }
 }

@@ -1,6 +1,5 @@
 .form_div {
-  padding: 30px;
-  min-width: 30vw; }
+  min-width: 25vw; }
 
 @media (max-width: 1200px) {
   #button_error {
@@ -8,5 +7,8 @@
 
   .error_message {
     margin-left: 0; } }
+@media (min-width: 800px) {
+  #subdomain_explanation_block {
+    width: 40%; } }
 
 /*# sourceMappingURL=subdomain.css.map */

@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,SAAU;EACN,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;;AAEnB,0BAA2B;EACvB,aAAc;IACV,OAAO,EAAE,OAAO;;EAEpB,cAAe;IACX,WAAW,EAAE,CAAC",
+"mappings": "AAAA,SAAU;EACN,SAAS,EAAE,IAAI;;AAEnB,0BAA2B;EACvB,aAAc;IACV,OAAO,EAAE,OAAO;;EAEpB,cAAe;IACX,WAAW,EAAE,CAAC;AAKlB,yBAA0B;EAF9B,4BAA6B;IAGrB,KAAK,EAAE,GAAG",
 "sources": ["../scss/subdomain.scss"],
 "names": [],
 "file": "subdomain.css"

@@ -1,28 +1,10 @@
-/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
-.container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.block {
-  align-content: center;
-  border-radius: 3px;
-  background-color: white;
-  width: auto;
-  min-width: 300px;
-  max-width: 70vw;
-  min-height: 250px;
-  padding: 20px;
-  /* Space between items */
-  margin-right: 30px;
-  margin-bottom: 30px;
+@import "colour";
 
-  table * {
+.block table * {
     padding: 3px;
     text-align: left;
-  }
 }
+
 #weather_iframe_wrapper {
   pointer-events: none;
   display: flex;
@@ -47,14 +29,27 @@
       color: #676868;
   }
 }
+.transit_emphasise {
+  background: $accent_colour;
+  border-radius: 3px;
+  transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
+  transition-duration: 0.3s;
+}
+.transit_emphasise:hover {
+  background: $accent_colour_focus;
+  -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.transit_emphasise a {
+  display: block;
+  color: white;
+  text-align: center;
+}
 
 @media (max-width: 800px) {
     #transit_block {
         overflow: scroll;
-    }
-    .block {
-        margin-right: 0;
-        width: 100%;
     }
     .container {
         justify-content: space-around;
