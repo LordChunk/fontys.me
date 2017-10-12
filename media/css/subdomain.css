@@ -11,10 +11,4 @@
   #subdomain_explanation_block {
     width: 40%; } }
 
-.template {
-  max-width: -webkit-fill-available;
-  -webkit-box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
-  -moz-box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
-  box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14); }
-
 /*# sourceMappingURL=subdomain.css.map */

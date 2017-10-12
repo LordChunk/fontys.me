@@ -74,7 +74,7 @@ if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
             If you have more than one teacher during the first lesson it will only send an email one of them.
             The email will look like this.
         </p>
-            <img src="/media/images/email_template.png">
+            <img class="template_img" src="/media/images/email_template.png">
         <p>
             Of course, your will look slightly different since it will include your name and your email address, etc.
 

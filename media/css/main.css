@@ -239,5 +239,11 @@ nav {
     margin-right: 0;
     width: 100%;
     max-width: 100%; } }
+.template_img {
+  max-width: -webkit-fill-available;
+  height: auto;
+  -webkit-box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14); }
 
 /*# sourceMappingURL=main.css.map */

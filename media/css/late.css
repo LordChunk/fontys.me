@@ -10,8 +10,5 @@
 @media (min-width: 800px) {
   #email_explanation_block {
     width: 40%; } }
-#email_explanation_block img {
-  max-width: -webkit-fill-available;
-  height: auto; }
 
 /*# sourceMappingURL=late.css.map */
