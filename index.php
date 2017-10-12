@@ -94,8 +94,8 @@
             //Not logged in
             echo "You must login to use this feature.";
         }
-
         ?>
+        <p class="font_weight_normal">For more info you can go to: <a class="font_weight_normal" target="_blank" href="https://pluff.venus.fhict.nl">Pluff</a></p>
     </section>
 
     <!--Weather block-->
@@ -228,27 +228,29 @@
                         ?>
                         <tr>
                             <td>
-                                <img src="<?= $step->{"transit_details"}->{"line"}->{"vehicle"}->{"icon"} ?>"/>
+                                <img src="<?= $step->{"transit_details"}->{"line"}->{"vehicle"}->{"icon"}?>"/>
                             </td>
-                            <td><?= $step->{"transit_details"}->{"departure_time"}->{"text"} ?></td>
-                            <td><?= $step->{"transit_details"}->{"departure_stop"}->{"name"} ?></td>
+                            <td><?= $step->{"transit_details"}->{"departure_time"}->{"text"}?></td>
+                            <td><?= $step->{"transit_details"}->{"departure_stop"}->{"name"}?></td>
                             <td class="td_devider"/>
-                            <td><?= $step->{"transit_details"}->{"arrival_time"}->{"text"} ?></td>
-                            <td><?= $step->{"transit_details"}->{"arrival_stop"}->{"name"} ?></td>
-                            <td>
+                            <td><?= $step->{"transit_details"}->{"arrival_time"}->{"text"}?></td>
+                            <td><?= $step->{"transit_details"}->{"arrival_stop"}->{"name"}?></td>
+                            <td class="transit_emphasise">
                                 <a href="
                                     <?php
                                 //If line specific link is available use this link instead of default link
                                 if ($step->{"transit_details"}->{"line"}->{"url"}) {
                                     echo $step->{"transit_details"}->{"line"}->{"url"};
-                                } else {
+                                }
+                                else
+                                {
                                     echo $step->{"transit_details"}->{"line"}->{"agencies"}[0]->{"url"};
                                 }
                                 ?>"
                                    target="_blank"
-                                   title="<?= $step->{"transit_details"}->{"line"}->{"agencies"}[0]->{"name"} ?>"
+                                   title="<?=$step->{"transit_details"}->{"line"}->{"agencies"}[0]->{"name"}?>"
                                 >
-                                    <?= $step->{"transit_details"}->{"line"}->{"short_name"} ?>
+                                    <?=$step->{"transit_details"}->{"line"}->{"short_name"} ?>
                                 </a>
                             </td>
                         </tr>
@@ -261,7 +263,7 @@
                                 <i class="material-icons transit_icons">directions_walk</i>
                             </td>
                             <td colspan="2">
-                                <?= $step->{"html_instructions"} ?>
+                                <?= $step->{"html_instructions"}?>
                             </td>
                         </tr>
                         <?php

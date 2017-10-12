@@ -1,7 +1,17 @@
+@import "colour";
+
 * {
   font-family: 'Roboto', sans-serif;
   outline: none;
-  color: #343434;
+}
+p, a {
+  font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6, th, b {
+  font-weight: 500;
+}
+.font_weight_normal {
+  font-weight: 400;
 }
 body {
   background-image: url(../images/background.png);
@@ -9,13 +19,23 @@ body {
   margin: 0;
   background-repeat: no-repeat;
   background-size: cover;
+  color: $text_colour;
 }
 /*Make links look nice*/
 a {
   text-decoration: none;
-  color: #039be5;
+  color: $link_colour;
   /*For JS and Jquery links */
   cursor: pointer;
+}
+a i {
+  color: $link_colour;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 /*make sure container elements stay in the center of the page */
 #logo {
@@ -27,6 +47,10 @@ nav {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   * {
 	color: white;
+    font-weight: 400;
+  }
+  i {
+    color: inherit;
   }
 }
 .container {
@@ -46,7 +70,7 @@ nav {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: #ee6e73;
+	background-color: $nav_colour;
   }
   li {
 	float: right;
@@ -72,7 +96,7 @@ nav {
 	transition-duration: 0.3s;
   }
   a:hover {
-	background-color: #d66367;
+	background-color: $nav_colour_focus;
   }
   .left {
 	float: left;
@@ -81,7 +105,7 @@ nav {
 //Stop desktop-nav
 /*Disable hover animation on desktop*/
 #title a:hover {
-  background-color: #ee6e73;
+  background-color: $nav_colour_focus;
 }
 
 /*Mobile nav */
@@ -94,7 +118,7 @@ nav {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	background-color: #ee6e73;
+	background-color: $nav_colour;
 	width: 25vw;
 	/*rens' shit*/
 	position: absolute;
@@ -109,7 +133,7 @@ nav {
 	transition-duration: 0.3s;
   }
   a:hover {
-	background-color: #d66367;
+	background-color: $nav_colour_focus;
   }
 }
 
@@ -129,7 +153,7 @@ nav {
 	display: none;
   }
   #title a:hover {
-	background-color: #d66367;
+	background-color: $nav_colour_focus;
   }
   #title {
 	min-width: 279.719px;
@@ -145,7 +169,7 @@ nav {
 .form_div {
   align-content: center;
   border-radius: 3px;
-  background-color: white;
+  background-color: $block_colour;
   width: 300px;
   max-width: 70vw;
 
@@ -170,7 +194,7 @@ nav {
   /*input interaction animations*/
   input:focus, textarea:focus {
 	border: 0;
-	border-bottom: 2px solid #26A69A;
+	border-bottom: 2px solid $accent_colour_focus;
 	outline: none;
   }
 
@@ -197,7 +221,7 @@ nav {
   /*Make icon and text same size */
   .input-confirm * {
 	font-size: 1em;
-	color: white;
+	color: $block_colour;
 	padding: 0 10px;
   }
 
@@ -210,7 +234,7 @@ nav {
   .input-confirm {
 	min-width: fit-content;
 	cursor: pointer;
-	background: #26a69a;
+	background: $accent_colour;
 	border: 0;
 	border-radius: 2px;
 	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
@@ -221,7 +245,7 @@ nav {
   }
 
   .input-confirm:hover {
-	background: #2bbbad;
+	background: $accent_colour_focus;
 	-webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
 	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
@@ -240,4 +264,23 @@ nav {
 }
 .success {
   color: black;
+}
+.block {
+  border-radius: 3px;
+  background-color: $block_colour;
+  width: auto;
+  min-width: 300px;
+  max-width: 70vw;
+  min-height: 250px;
+  padding: 20px;
+  /* Space between items */
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+@media (max-width: 800px) {
+  .block {
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
 }

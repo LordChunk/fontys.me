@@ -1,6 +1,5 @@
 .form_div {
-    padding: 30px;
-    min-width: 30vw;
+    min-width: 25vw;
 }
 @media (max-width: 1200px) {
     #button_error {
@@ -9,4 +8,16 @@
     .error_message {
         margin-left: 0;
     }
+}
+#subdomain_explanation_block {
+    //Only for desktop setting
+    @media (min-width: 800px) {
+        width: 40%;
+    }
+}
+.template {
+    max-width: -webkit-fill-available;
+    -webkit-box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
+    box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
 }

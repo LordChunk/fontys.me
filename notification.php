@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-
+//Notificatie: 1 dag en 1 week
 ?>
     <form method="post" action="notification.php">
         <input name="body" placeholder="body">
@@ -24,7 +24,7 @@
         include "media/includes/FHICT_api.inc.php";
 
         $service = new FHICTService();
-        $data = $service->getServiceData('/canvas/todo/me');
+        $data = $service->getServiceData('/canvas/upcoming/me');
 
 
 
