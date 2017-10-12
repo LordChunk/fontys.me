@@ -76,7 +76,7 @@ nav {
 
 /*Mobile nav */
 .side-nav {
-  top: -334px;
+  top: -10000px;
   /*Mobile nav is hidden unless activated by user */ }
 
 #mobile-nav ul {
