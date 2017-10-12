@@ -74,3 +74,18 @@
 #button_error p {
     margin-bottom: 0;
 }
+#weather {
+  overflow: hidden;
+}
+.weather_iframe {
+  border: none;
+  margin: 0 auto;
+}
+#weather_iframe_desktop {
+  width: 330px;
+  height: 330px;
+}
+#weather_iframe_mobile {
+  width: 256px;
+  height: 256px;
+}

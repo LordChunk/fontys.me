@@ -15,7 +15,7 @@ if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
             <div class="input-field">
                 <br>
                 <span>When do you expect to be in class?</span><br>
-                <input type="time" id="time" name="time" placeholder="8:45" required>
+                <input type="time" id="time" name="time" required>
                 <!--<label for="subdomain">Subdomain</label>-->
             </div>
             <div class="input-field">
