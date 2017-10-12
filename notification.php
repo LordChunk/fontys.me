@@ -2,7 +2,10 @@
 <head>
     <!--OneSignal-->
     <script async src="media/js/notification.js"></script>
-
+    <!--OneSignal-->
+    <link rel="manifest" href="/manifest.json">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <script async src="media/js/onesignal.js"></script>
 </head>
 <body>
     <div class="container">
