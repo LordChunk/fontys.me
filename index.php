@@ -101,16 +101,12 @@
     <!--Weather block-->
     <section class="block" id="weather">
         <h1>Weather:</h1>
-        <a href="https://buienradar.nl/nederland/neerslag/zoom/3uurs?lat=51.44083&lon=5.47778" target="_blank">
             <div id="weather_iframe_wrapper">
-                <iframe id="weather_iframe_desktop" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2b&voor=1"
-                        scrolling=no width=330 height=330 frameborder=no>
+                <iframe class="weather_iframe" id="weather_iframe_desktop" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2b&voor=1">
                 </iframe>
-                <iframe id="weather_iframe_mobile" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2&voor=1"
-                        scrolling=no width=256 height=256 frameborder=no>
+                <iframe  class="weather_iframe" id="weather_iframe_mobile" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2&voor=1">
                 </iframe>
             </div>
-        </a>
     </section>
 
     <!--Normal transit block -->
@@ -201,7 +197,8 @@
                     </p>
                 </div>
             </form>
-        </section>
+        </div>
+    </section>
 
     <!--Additional transit info block -->
     <section class="block" id="transit_block">

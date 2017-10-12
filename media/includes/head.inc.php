@@ -37,21 +37,24 @@
         <!--Search engine meta tags-->
         <meta name="description" content="This is a dashboard for all FHICT student. This dashboards helps students get all the information they need right on one webpage." />
         <meta name="keywords" content="FHICT, Fontys, Fontys.me, Job van Ooik, van Ooik, Dashboard Fontys, P14" />
-        <meta name="author" content="Job van Ooik"
+        <meta name="author" content="Job van Ooik" />
         <meta name="robots" content="index, follow" />
 
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- Gfonts roboto-->
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <!-- Load css asynchronously -->
+        <script>
+            var cssFile = "<?=substr_replace($_SERVER["SCRIPT_NAME"], "css", -3)?>";
+        </script>
+        <script async src="/media/js/css.js" type="text/javascript"> </script>
 
-        <!--Files I didn't find on the dark web-->
-        <link rel="stylesheet" type="text/css" href="/media/css/main.css">
+        <!--Import jQuery before js files-->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-        <!-- Include file specific CSS -->
-        <link rel="stylesheet" type="text/css" href="/media/css<?=substr_replace($_SERVER["SCRIPT_NAME"], "css", -3);?>">
+        <!--My own javascript stuff -->
+        <script async src="/media/js/main.js" type="text/javascript"></script>
 
-
+        <!--Cookie consent -->
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+        <script async src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
         <title><?=$title?></title>
     </head>
@@ -76,7 +79,7 @@
                     <!--<li class="left"><a href="#" data-activates="mobile-demo"><i class="material-icons">menu</i></a></li>-->
                     <li class="left" id="title">
                         <a id="open_mobile_nav">
-                            <img id="logo" src="media/images/logo_150px.png"/>
+                            <img alt="logo" id="logo" src="media/images/logo_150px.png"/>
                             <i class="material-icons mobile">menu</i>
                             <?=$title ?>
                         </a>

@@ -22,16 +22,18 @@ $(document).ready(function () {
     });
 });
 
-
-/*
-function openNav() {
-    //console.log("openNav");
-    document.getElementById("nav-vertical").style.top = "0";
-};
-
-function closeNav() {
-    //console.log("closeNav");
-    document.getElementById("nav-vertical").style.top = "-281px";
-
-};
-*/
+//Cookie consent
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+    "palette": {
+        "popup": {
+            "background": "#ee6e73",
+            "text": "#ffffff"
+        },
+        "button": {
+            "background": "#26a69a",
+            "text": "#ffffff"
+        }
+    },
+    "theme": "classic"
+})});
