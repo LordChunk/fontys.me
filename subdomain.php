@@ -76,7 +76,7 @@ if($_SESSION['ingelogd'] !== true){
         <p>
             I'm registering the subdomain local.fontys.me, which I host on the Hera server.
         </p>
-        <img class="template_img" src="/media/images/subdomain_template.png"/>
+        <img class="template_img" alt="template image subdomain" src="/media/images/subdomain_template.png"/>
     </section>
 </div>
 <?php
