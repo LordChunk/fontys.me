@@ -1,4 +1,4 @@
-<FilesMatch "connect\.inc\.php|login_config\.inc\.php|cloudflare_api\.inc\.php|OpenIDConnectClient\.inc\.php|FHICT_API\.inc\.php">
+<FilesMatch "connect-Freaze\.inc\.php|login_config\.inc\.php|cloudflare_api\.inc\.php|OpenIDConnectClient\.inc\.php|FHICT_API\.inc\.php">
   Order allow,deny
   Deny from all
 </FilesMatch>

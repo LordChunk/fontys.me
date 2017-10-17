@@ -21,8 +21,8 @@
     } else
     {
         $nav =  ["logout" => "Logout",
-                "subdomain" => "Request a fontys.me subdomain",
-                'late' => "I'm late email service"] + $nav;
+                "subdomain" => "Request a Fontys.me Subdomain",
+                'late' => "\"I'm Late\" Email Service"] + $nav;
     }
     ?>
     <!DOCTYPE html>
@@ -36,8 +36,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <!--Search engine meta tags-->
-        <meta name="description" content="This is a dashboard for all FHICT student. This dashboards helps students get all the information they need right on one webpage." />
-        <meta name="keywords" content="FHICT, Fontys, Fontys.me, Job van Ooik, van Ooik, Dashboard Fontys, P14" />
+        <meta name="description" content="This is a dashboard for all FHICT students. This dashboard helps students get all the information they need, right from one webpage." />
+        <meta name="keywords" content="FHICT, Fontys, Fontys.me, Job van Ooik, van Ooik, Dashboard Fontys, Fontys Student Dashboard" />
         <meta name="author" content="Job van Ooik" />
         <meta name="robots" content="index, follow" />
 
@@ -65,7 +65,7 @@
         <nav>
             <div class="mobile" id="mobile-nav">
                 <!--Hidden mobile nav -->
-                <ul class="side-nav">
+                <ul id="side-nav">
                     <!-- Home button -->
                     <li><a href="/">Home</a></li>
                     <?php foreach ($nav as $link => $tekst) {?>

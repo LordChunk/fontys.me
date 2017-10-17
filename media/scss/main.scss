@@ -1,9 +1,11 @@
+//Import colour pallets
 @import "colour";
 
 * {
   font-family: 'Roboto', sans-serif;
-  outline: none;
+  outline: none; //Prevent button outlines etc.
 }
+//Setup correct font-weights for elements
 p, a {
   font-weight: 300;
 }
@@ -13,6 +15,7 @@ h1, h2, h3, h4, h5, h6, th, b {
 .font_weight_normal {
   font-weight: 400;
 }
+//Setup backgrounds and background failover
 body {
   background-image: url(../images/background.png);
   background-color: #d7d7d7;
@@ -28,23 +31,34 @@ a {
   /*For JS and Jquery links */
   cursor: pointer;
 }
+//Give elements in links the same colour as the link
 a i {
   color: $link_colour;
 }
+//Containers are used as a wrapper for all the main elements on the page
 .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 70%;
+  //Center elements
+  margin: 0 auto;
+  //Set space between elements and nav
+  margin-top: 20px;
+  max-width: 1280px;
 }
 /*make sure container elements stay in the center of the page */
 #logo {
   height: 1em;
 }
+
 nav {
+  //Shadow for nav bar
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  //Remove link and icon colour on nav bar
   * {
 	color: white;
     font-weight: 400;
@@ -53,13 +67,7 @@ nav {
     color: inherit;
   }
 }
-.container {
-  width: 70%;
-  margin: 0 auto;
-  margin-top: 20px;
-  max-width: 1280px;
-}
-/*Fucking Google icons doen echt moeilijk*/
+/*Set google icons to have the same size as the text they're used with*/
 .material-icons {
   font-size: initial;
 }
@@ -103,14 +111,13 @@ nav {
   }
 }
 //Stop desktop-nav
-/*Disable hover animation on desktop*/
 #title a:hover {
   background-color: $nav_colour_focus;
 }
 
 /*Mobile nav */
-.side-nav {
-  top: -10000px; /*Mobile nav is hidden unless activated by user */
+#side-nav {
+  top: -100000vh; //This is now handled using js (see main.js)
 }
 
 #mobile-nav {
@@ -136,7 +143,7 @@ nav {
 	background-color: $nav_colour_focus;
   }
 }
-
+//Make close icon stand out more
 #close_mobile_nav {
   text-align: right;
 }
@@ -144,7 +151,7 @@ nav {
 .mobile {
   display: none;
 }
-/*Mobile*/
+/*Mobile nav stuff*/
 @media (max-width: 800px) {
   .mobile {
 	display: block;
@@ -158,38 +165,44 @@ nav {
   #title {
 	min-width: 279.719px;
   }
+  //Make blocks take up more space on mobile
   .container {
 	width: 90%;
   }
+  //This background is tilted 90% to fit on a mobile screen
   body {
 	background-image: url("../images/background_mobile.png");
   }
 }
 /*Style from items*/
 .form_div {
-  align-content: center;
   border-radius: 3px;
-  background-color: $block_colour;
   width: 300px;
   max-width: 70vw;
 
+  //set whitespace for form elements
   * {
 	margin-top: 10px;
   }
 
-  input, textarea {
-	width: -webkit-fill-available;
-	padding: 12px 20px;
+  input:not([type=radio]), textarea {
+	width: 80%;
+    padding: 12px 20px;
 	border: 0;
 	border-bottom: 2px solid rgba(117, 117, 117, 0.5);
 	transition: border-bottom 0.2s;
 	margin-bottom: 5px;
   }
+  //Only radio buttons use labels so far (this puts the label text inline with the radio buttons)
+  label {
+    display: block;
+  }
+  //Prevent text areas from resizing form divs
   textarea {
     resize: vertical;
   }
   input[type=time]{
-    width: auto;
+    width: auto; //Prevent time inputs from being too big
   }
   /*input interaction animations*/
   input:focus, textarea:focus {
@@ -221,7 +234,7 @@ nav {
   /*Make icon and text same size */
   .input-confirm * {
 	font-size: 1em;
-	color: $block_colour;
+	color: white;
 	padding: 0 10px;
   }
 
@@ -241,7 +254,8 @@ nav {
 	-moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 	/*hover animation */
-	transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
+    transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
+    transition-duration: 0.3s;
   }
 
   .input-confirm:hover {

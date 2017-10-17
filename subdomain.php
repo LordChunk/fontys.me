@@ -68,15 +68,15 @@ if($_SESSION['ingelogd'] !== true){
             This is a tutorial on how to request a <a href="http://lmgtfy.com/?q=What%27s+a+subdomain" target="_blank">subdomain</a> for fontys.me.
             This tutorial assumes you've already requested and setup your Linux web host via the <a href="https://apps.fhict.nl/selfservice/Webhosting/Linux" target="_blank">FHICT Self-service Portal</a>.
         </p><p>
-            The standard IP for the Hera server is <b>145.85.4.70</b>, this will be what you fill in for IP (IPv4).
+            The standard IP for the Hera server is <b>145.85.4.70</b>; this will be what you fill in for the IP (IPv4) field.
         </p><p>
-            For the subdomain, you can choose whatever you want, keep in mind that currently you cannot change your subdomain and you're only allowed to register one subdomain per account. So please, think carefully when choosing your subdomain.
+            For the subdomain, you can choose whatever you want, but keep in mind that currently you cannot change your subdomain. Also, you're only allowed to register one subdomain per account. So please, think carefully when choosing your subdomain.
         </p>
         <h3>Example:</h3>
         <p>
             I'm registering the subdomain local.fontys.me, which I host on the Hera server.
         </p>
-        <img class="template_img" src="/media/images/subdomain_template.png"/>
+        <img class="template_img" alt="template image subdomain" src="/media/images/subdomain_template.png"/>
     </section>
 </div>
 <?php

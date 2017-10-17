@@ -6,6 +6,60 @@
  * Time: 21:23
  */
 session_start();
+$UID = $_SESSION["UID"];
+//Check when last email was send
+require "connect-Freaze.inc.php";
+
+//Create template
+$sql = "SELECT * FROM late_email WHERE UID=" . $UID;
+
+$result = mysqli_query($conn, $sql);
+
+if (!$result){
+    echo "an error occured<br>";
+    header('Location: /late?error=db');
+    exit();
+}
+
+$num_rows = mysqli_num_rows($result);
+$row = mysqli_fetch_row($result)[0];
+if ($num_rows == 0)
+{
+
+}
+elseif ($num_rows == 1)
+{
+    $last_sent = mysqli_fetch_row($result)[1]; //Get last send email time
+    if (time()+ (12 * 60 * 60) < $last_sent)    //Check for within 12 hours
+    {
+        //Within 12 hours
+        echo 'Wow no emails pls';
+        exit();
+    }
+
+    //Insert new time
+    $sql = "DELETE FROM late_email WHERE UID=".$UID.";
+            INSERT INTO late_email (UID, last_sent) VALUES (".$UID.", ".time().");";
+
+    $result = mysqli_query($conn, $sql);
+
+    if (!$result){
+        echo "an error occured<br>";
+        header('Location: /late?error=db');
+        exit();
+    }
+}
+else
+{
+    //header("location : /late?error=mutli_row");
+    var_dump($row);
+    exit();
+}
+
+
+
+
+exit();
 
 
 require $_SERVER["DOCUMENT_ROOT"] . "/media/includes/FHICT_api.inc.php";

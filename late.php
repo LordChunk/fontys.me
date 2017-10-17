@@ -10,7 +10,7 @@ if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
 <div class="container">
     <section class="block">
         <div class="form_div">
-            <h2 class="form_header">A bit late? Don't worry I've got you covered.</h2>
+            <h2 class="form_header">A bit late? Don't worry, I've got you covered.</h2>
             <form action="/media/includes/late.inc.php" method="POST" id="late_form">
 
                 <div class="input-field">
@@ -39,16 +39,16 @@ if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
                         switch ($error)
                         {
                             case "login_timeout":
-                                echo "Your session timed out, please log in and out and try again.";
+                                echo "Your session timed out, please log back in and try again.";
                                 break;
                             case "email_name":
-                                echo "Please allow email access when you log in.<br> To fix this logout and log back in.";
+                                echo "Please allow email access when you log in.<br> To fix this, logout and log back in.";
                                 break;
                             case "empty_time":
                                 echo "Your time input was invalid.";
                                 break;
                             case "body_fetch":
-                                echo "An error occurred while loading the email content.";
+                                echo "An error occurred while loading the content of the email.";
                                 break;
                             case "credentials_fetch":
                                 echo "An error occurred while loading the email settings.";
@@ -69,14 +69,14 @@ if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
     <section class="block" id="email_explanation_block">
         <h2>What does this do?</h2>
         <p>
-            This email service does the following.
-            It will send an email to you and the teacher whom gives the first lesson today.
-            If you have more than one teacher during the first lesson it will only send an email one of them.
+            This email service does the following:
+            It will send an email to you and the teacher who will be giving your first lesson on that day.
+            If you have more than one teacher during the first lesson, it will only send an email to one of them.
             The email will look like this.
         </p>
-            <img class="template_img" src="/media/images/email_template.png">
+        <img class="template_img" alt="template image email" src="/media/images/email_template.png">
         <p>
-            Of course, your will look slightly different since it will include your name and your email address, etc.
+            Of course, yours will look slightly different since it will include your name and your email address.
 
         </p>
     </section>

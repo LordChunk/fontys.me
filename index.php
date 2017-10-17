@@ -6,7 +6,7 @@
 <div class="container">
     <!--To-do list-->
     <section class="block">
-        <h1>Canvas to-do list:</h1>
+        <h1>Canvas To-Do List:</h1>
 
             <?php
             /*
@@ -50,7 +50,7 @@
     </section>
     <!--Schedule today-->
     <section class="block">
-        <h1>Schedule for today:</h1>
+        <h1>Schedule for Today:</h1>
         <?php
         /*
          * Schedule today
@@ -95,7 +95,7 @@
             echo "You must login to use this feature.";
         }
         ?>
-        <p class="font_weight_normal">For more info you can go to: <a class="font_weight_normal" target="_blank" href="https://pluff.venus.fhict.nl">Pluff</a></p>
+        <p class="font_weight_normal">For more info, go to: <a class="font_weight_normal" target="_blank" href="https://pluff.venus.fhict.nl">Pluff</a></p>
     </section>
 
     <!--Weather block-->
@@ -111,7 +111,7 @@
 
     <!--Normal transit block -->
     <section class="block">
-        <h1>Public transport:</h1>
+        <h1>Public Transport:</h1>
         <!-- Google maps -->
         <?php
         include "media/includes/google_maps_api.inc.php";
@@ -141,13 +141,13 @@
         <div class="form_div">
             <form action="media/includes/google_nav.inc.php" method="post">
                 <h3>Customise your journey:</h3>
-                <input type="text" placeholder="Departure" name="departure"><br>
-                <input type="text" placeholder="Arrival" name="arrival" value="Fontys Rachelsmolen"><br>
-                <br>
-                Language:<br>
-
-                <label><input type="radio" name="language" value="nl" title="Nederlands">Nederlands</label><br>
-                <label><input type="radio" name="language" value="en-GB" title="English" checked>English</label><br>
+                <input type="text" placeholder="Departure" name="departure">
+                <input type="text" placeholder="Arrival" name="arrival" value="Fontys Rachelsmolen">
+                <p>
+                    Language:
+                </p>
+                <label><input type="radio" name="language" value="nl" title="Nederlands">Nederlands</label>
+                <label><input type="radio" name="language" value="en-GB" title="English" checked>English</label>
 
                 <!--
                 <link rel="stylesheet" type="text/css" href="/media/css/radiobuton.css">
@@ -190,7 +190,7 @@
                                 echo "An internal error occurred while setting your cookies";
                                 break;
                             case "success":
-                                echo "Your journey has been stored successfully.";
+                                echo "Your journey has been saved successfully.";
                                 break;
                         }
                         ?>
@@ -202,7 +202,7 @@
 
     <!--Additional transit info block -->
     <section class="block" id="transit_block">
-        <h1>Additional transit info:</h1>
+        <h1>Additional Transit Info:</h1>
         <?php
         if($transit_result) {
             ?>
