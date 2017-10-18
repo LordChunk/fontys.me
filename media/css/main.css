@@ -33,7 +33,11 @@ a i {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between; }
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 1280px; }
 
 /*make sure container elements stay in the center of the page */
 #logo {
@@ -49,13 +53,7 @@ nav {
   nav i {
     color: inherit; }
 
-.container {
-  width: 70%;
-  margin: 0 auto;
-  margin-top: 20px;
-  max-width: 1280px; }
-
-/*Fucking Google icons doen echt moeilijk*/
+/*Set google icons to have the same size as the text they're used with*/
 .material-icons {
   font-size: initial; }
 
@@ -91,14 +89,12 @@ nav {
   .desktop-nav .left {
     float: left; }
 
-/*Disable hover animation on desktop*/
 #title a:hover {
   background-color: #d66367; }
 
 /*Mobile nav */
-.side-nav {
-  top: -10000px;
-  /*Mobile nav is hidden unless activated by user */ }
+#side-nav {
+  top: -100000vh; }
 
 #mobile-nav ul {
   list-style-type: none;
@@ -126,7 +122,7 @@ nav {
 .mobile {
   display: none; }
 
-/*Mobile*/
+/*Mobile nav stuff*/
 @media (max-width: 800px) {
   .mobile {
     display: block; }
@@ -147,9 +143,7 @@ nav {
     background-image: url("../images/background_mobile.png"); } }
 /*Style from items*/
 .form_div {
-  align-content: center;
   border-radius: 3px;
-  background-color: white;
   width: 300px;
   max-width: 70vw;
   /*input interaction animations*/
@@ -157,13 +151,15 @@ nav {
   /*Make icon and text same size */ }
   .form_div * {
     margin-top: 10px; }
-  .form_div input, .form_div textarea {
-    width: -webkit-fill-available;
+  .form_div input:not([type=radio]), .form_div textarea {
+    width: 80%;
     padding: 12px 20px;
     border: 0;
     border-bottom: 2px solid rgba(117, 117, 117, 0.5);
     transition: border-bottom 0.2s;
     margin-bottom: 5px; }
+  .form_div label {
+    display: block; }
   .form_div textarea {
     resize: vertical; }
   .form_div input[type=time] {
@@ -201,7 +197,8 @@ nav {
     -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
     /*hover animation */
-    transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s; }
+    transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
+    transition-duration: 0.3s; }
   .form_div .input-confirm:hover {
     background: #26A69A;
     -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
@@ -224,7 +221,7 @@ nav {
 
 .block {
   border-radius: 3px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.75);
   width: auto;
   min-width: 300px;
   max-width: 70vw;

@@ -92,8 +92,12 @@ if($row == 0)
     echo "Registered new user";
 }
 
+//Execute search again and cache UID
+$result = mysqli_query($conn, $sql1);
+
+$_SESSION["UID"] = mysqli_fetch_row($result)[0];
 
 
-// Redirect back to the page we wanted to login too.
+//Redirect back to the page we wanted to login too.
 header('Location: ' . $_SESSION['redirect_URL']);
 ?>
