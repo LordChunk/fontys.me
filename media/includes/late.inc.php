@@ -5,12 +5,20 @@
  * Date: 07/10/2017
  * Time: 21:23
  */
+
+
+///
+///             THIS IS STILL WIP
+///
+
+
+
 session_start();
 $UID = $_SESSION["UID"];
 //Check when last email was send
 require "connect-Freaze.inc.php";
 
-//Create template
+//Build SQL query
 $sql = "SELECT * FROM late_email WHERE UID=" . $UID;
 
 $result = mysqli_query($conn, $sql);
@@ -59,6 +67,8 @@ else
 
 
 
+
+//Temp exit for testing
 exit();
 
 
