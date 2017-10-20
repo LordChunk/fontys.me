@@ -8,7 +8,7 @@
 ?>
 
 <footer>
-    <span>Lovingly proof-read by: <a href="https://www.omfgdogs.com" target="_blank">Lucy Fox <3</a></span>
+    <span>Lovingly proof-read by: <a href="https://www.omfgdogs.com" target="_blank">Lucy Fox &lt;3</a></span>
 </footer>
 </body>
 </html>
