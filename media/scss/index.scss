@@ -17,6 +17,9 @@
 }
 
 /*Transit info styling */
+#transit_block {
+  grid-column-start: span 2;
+}
 #transit_info {
   .td_devider {
       width: 7px;
@@ -28,6 +31,7 @@
       font-size: 30px;
       color: #676868;
   }
+  width: 100%;
 }
 .transit_emphasise {
   background: $accent_colour;

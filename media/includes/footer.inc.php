@@ -19,7 +19,13 @@
                     Lovingly proof-read by: <a href="https://www.omfgdogs.com" target="_blank">Lucy Fox &lt;3</a>
                 </li>
                 <li>
-                    Icons provided by: <a href="https://material.io/icons/" target="_blank">Google's Material Design</a>
+                    Icons: <a href="https://material.io/icons/" target="_blank">Google's Material Design</a>
+                </li>
+                <li>
+                    Weather info: <a href="https://www.buienradar.nl/" target="_blank">Buienradar</a>
+                </li>
+                <li>
+                    Transit info: <a href="https://www.maps.google.com/" target="_blank">Google Maps</a>
                 </li>
             </ul>
         </div>

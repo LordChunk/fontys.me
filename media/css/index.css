@@ -11,13 +11,18 @@
     display: none; }
 
 /*Transit info styling */
-#transit_info .td_devider {
-  width: 7px; }
-#transit_info td {
-  max-width: 300px; }
-#transit_info .transit_icons {
-  font-size: 30px;
-  color: #676868; }
+#transit_block {
+  grid-column-start: span 2; }
+
+#transit_info {
+  width: 100%; }
+  #transit_info .td_devider {
+    width: 7px; }
+  #transit_info td {
+    max-width: 300px; }
+  #transit_info .transit_icons {
+    font-size: 30px;
+    color: #676868; }
 
 .transit_emphasise {
   background: #26a69a;
