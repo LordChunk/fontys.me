@@ -63,60 +63,57 @@
         <title><?=$title?></title>
     </head>
     <body>
-    <!-- nav div -->
-    <div class="welcome">
-        <!--Navigation bar -->
-        <nav>
-            <!-- Mobile nav -->
-            <div class="mobile" id="mobile-nav">
-                <!--Hidden mobile nav -->
-                <ul id="side-nav">
-                    <!-- Home button -->
-                    <li><a href="/">Home</a></li>
+    <!--Navigation bar -->
+    <nav>
+        <!-- Mobile nav -->
+        <div class="mobile" id="mobile-nav">
+            <!--Hidden mobile nav -->
+            <ul id="side-nav">
+                <!-- Home button -->
+                <li><a href="/">Home</a></li>
 
-                    <?php
-                    foreach ($nav as $link => $tekst)
-                    {?>
-                        <li>
-                            <a href="<?=$link?>">
-                                <?=$tekst?>
-                            </a>
-                        </li>
-                    <?php
-                    }
-                    ?>
-
-                    <!-- Close nav button -->
+                <?php
+                foreach ($nav as $link => $tekst)
+                {?>
                     <li>
-                        <a id="close_mobile_nav" class="nav_trigger">
-                            <i class="material-icons">close</i>
+                        <a href="<?=$link?>">
+                            <?=$tekst?>
                         </a>
                     </li>
-                </ul>
-            </div>
-            <!--desktop nav -->
-            <div class="desktop-nav">
-                <ul>
-                    <li class="left" id="title">
-                        <a id="open_mobile_nav">
-                            <img alt="logo" id="logo" src="/media/images/logo_150px.png"/>
-                            <i class="material-icons mobile">menu</i>
-                            <?=$title ?>
-                        </a>
+                <?php
+                }
+                ?>
+
+                <!-- Close nav button -->
+                <li>
+                    <a id="close_mobile_nav" class="nav_trigger">
+                        <i class="material-icons">close</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--desktop nav -->
+        <div class="desktop-nav">
+            <ul>
+                <li class="left" id="title">
+                    <a id="open_mobile_nav">
+                        <img alt="logo" id="logo" src="/media/images/logo_150px.png"/>
+                        <i class="material-icons mobile">menu</i>
+                        <?=$title ?>
+                    </a>
+                </li>
+
+
+            <!--Normal nav bar -->
+                <?php
+                foreach ($nav as $link => $tekst)
+                {?>
+                    <li class="desktop">
+                        <a href="<?=$link; ?>"><?=$tekst ?></a>
                     </li>
-
-
-                <!--Normal nav bar -->
-                    <?php
-                    foreach ($nav as $link => $tekst)
-                    {?>
-                        <li class="desktop">
-                            <a href="<?=$link; ?>"><?=$tekst ?></a>
-                        </li>
-                    <?php
-                    }
-                    ?>
-                </ul>
-            </div>
-        </nav>
-    </div>
+                <?php
+                }
+                ?>
+            </ul>
+        </div>
+    </nav>

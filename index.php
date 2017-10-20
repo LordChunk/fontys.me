@@ -3,7 +3,7 @@
     include "media/includes/FHICT_api.inc.php";
 ?>
 <!-- Body -->
-<div class="container">
+<main class="container">
     <!--To-do list-->
     <section class="block">
         <h1>Canvas To-Do List:</h1>
@@ -143,9 +143,8 @@
                 <h3>Customise your journey:</h3>
                 <input type="text" placeholder="Departure" name="departure">
                 <input type="text" placeholder="Arrival" name="arrival" value="Fontys Rachelsmolen">
-                <p>
-                    Language:
-                </p>
+
+                <h3>Language:</h3>
                 <label><input type="radio" name="language" value="nl" title="Nederlands">Nederlands</label>
                 <label><input type="radio" name="language" value="en-GB" title="English" checked>English</label>
                 <div id="button_error">
@@ -262,6 +261,6 @@
         ?>
     </section>
 
-</div>
+</main>
 <?php
 include "media/includes/footer.inc.php";
