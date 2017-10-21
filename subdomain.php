@@ -41,10 +41,10 @@ if($_SESSION['ingelogd'] !== true){
                                 case "sql":
                                     echo "An error occurred while executing an SQL query. <br>Please contact the developer at: j.vanooik@student.fontys.nl.";
                                     break;
-                                case "doubleAccount":
+                                case "double_account":
                                     echo "Your email is registered twice in our database. <br>Please contact the developer at: j.vanooik@student.fontys.nl.";
                                     break;
-                                case "limitReached":
+                                case "limit_reached":
                                     echo "You have reached your domain registration limit.";
                                     break;
                                 case "curl":

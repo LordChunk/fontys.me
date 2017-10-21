@@ -1,10 +1,12 @@
 <?php
 include "media/includes/head.inc.php";
 
+
+//Disabled admin page
                                     /*Temp admin restriction*/
-if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
-    header("location: /login");
-}
+//if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
+//    header("location: /login");
+//}
 ?>
 <!-- Body -->
 <main>
@@ -56,6 +58,15 @@ if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
                                     break;
                                 case "email_sender":
                                     echo "An error occurred while sending the email";
+                                    break;
+                                case "cool_down":
+                                    echo "Sorry, you're only allowed to send one email every eight hours.";
+                                    break;
+                                case "sql":
+                                    echo "An error occurred while executing an SQL query. <br>Please contact the developer at: j.vanooik@student.fontys.nl.";
+                                    break;
+                                case "multi_row":
+                                    echo "Your email is registered twice in our database. <br>Please contact the developer at: j.vanooik@student.fontys.nl.";
                                     break;
                                 case "success":
                                     echo "Your email was sent successfully, a copy of the email was send to your school address as well.";

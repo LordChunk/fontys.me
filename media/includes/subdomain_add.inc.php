@@ -36,7 +36,7 @@ if($row == 0)
 elseif ($row !== 1)
 {
     echo "Your account has been registered twice. <br>This usually is the result of some kind of bug. <br>Please contact the developer at: j.vanooik@student.fontys.nl";
-    header("location: /subdomain?error=doubleAccount");
+    header("location: /subdomain?error=double_account");
     exit();
 }
 
@@ -71,7 +71,7 @@ $row = mysqli_num_rows($result3);
 if ($row >= $max_domains)
 {
     //Reached limit or is over limit
-    header("location: /subdomain?error=limitReached");
+    header("location: /subdomain?error=limit_reached");
     exit();
 }
 else

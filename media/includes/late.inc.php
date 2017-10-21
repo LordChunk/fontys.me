@@ -14,6 +14,47 @@
 
 
 session_start();
+$UID = $_SESSION["UID"];
+//Check when last email was send
+require "connect-Freaze.inc.php";
+
+//Build SQL query
+$sql = "SELECT * FROM late_email WHERE UID=" . $UID;
+
+$result = mysqli_query($conn, $sql);
+
+if (!$result){
+    echo "an error occured<br>";
+    header('Location: /late?error=sql');
+    exit();
+}
+
+$num_rows = mysqli_num_rows($result);
+$row = mysqli_fetch_row($result)[0];
+if ($num_rows == 0)
+{
+    echo "user has never user email service before <br>";
+}
+elseif ($num_rows == 1)
+{
+    $last_sent = mysqli_fetch_row($result)[1]; //Get last send email time
+    if ($last_sent < time()+ (8 * 60 * 60))    //Check for within 12 hours
+    {
+        //Within 12 hours
+        echo 'Wow no emails pls';
+        header('Location: /late?error=cool_down');
+        exit();
+    }
+}
+else
+{
+    header("location : /late?error=multi_row");
+    //var_dump($row);
+    exit();
+}
+
+//User passed cool down check
+
 require $_SERVER["DOCUMENT_ROOT"] . "/media/includes/FHICT_api.inc.php";
 $service = new FHICTService();
 //Fetch today's schedule
@@ -111,7 +152,7 @@ echo "passed body loader";
 $mail->Subject = "Te laat melding: ". $student_name;
 //$mail->addAddress("j.vanooik@student.fontys.nl");
 //$mail->addAddress("meowingdalmatian@protonmail.com");
-//$mail->addAddress($teacher_email);
+$mail->addAddress($teacher_email);
 $mail->addAddress($student_email);
 //final
 //$mail->addAddress($teacher_address);
@@ -119,6 +160,13 @@ $mail->addAddress($student_email);
 if($mail->send())
 {
     echo "email was send successfully";
+
+    //Email was send so delete old record in database and replace it with the new one
+    //Remove old value and insert new last send time
+    $sql = "DELETE FROM late_email WHERE UID=".$UID.";
+             INSERT INTO late_email (UID, last_sent) VALUES (".$UID.", ".time().");";
+
+    $result = mysqli_multi_query($conn, $sql);
 }
 else
 {
