@@ -48,6 +48,15 @@ main {
 .container {
   //Display grid setup
   //https://css-tricks.com/difference-explicit-implicit-grids/
+
+  ////Edge and explorer support ftw
+  ////Edge doesn't work atm cause it's very finicky and isn't a top priority
+  //display: -ms-grid;
+  //
+  //
+  //-ms-grid-columns: auto 340px;
+  //-ms-grid-rows: 50px 5em auto;
+
   display: grid;
   //Generate columns for every item
   grid-template-columns: repeat(auto-fit, 340px);
