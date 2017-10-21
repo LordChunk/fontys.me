@@ -57,7 +57,10 @@ class FHICTService {
  * include 'FHICTService';
  *
  * $service = new FHICTService();
- * $data = $service->getServiceData('/groups);
+ * $data = $service->getServiceData('/groups');
  *
  * //
  */
+
+//require $_SERVER["DOCUMENT_ROOT"] . "/media/includes/FHICT_api.inc.php";
+//$service = new FHICTService();

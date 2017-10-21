@@ -17,6 +17,20 @@ OneSignal.push(["init", {
     }
 }]);
 
+//Set class variables
+OneSignal.push(function () {
+    OneSignal.getTags(function(tags) {
+        // All the tags stored on the current webpage visitor
+        console.log("OneSignal getTags: ");
+        console.log(tags);
+        if (tags.group === undefined)
+        {
+            console.log("Set new user class");
+            OneSignal.sendTag("group", group); //Group is defined in the the head
+        }
+    });
+});
+
 function register() {
     OneSignal.registerForPushNotifications({
         modalPrompt: true

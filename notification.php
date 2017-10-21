@@ -1,11 +1,17 @@
+<?php
+session_start();
+?>
 <html>
 <head>
-    <!--OneSignal-->
-
     <!--OneSignal-->
     <link rel="manifest" href="/manifest.json">
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
     <script src="media/js/notification.js"></script>
+
+    <script>
+        var cssFile = "<?=substr_replace($_SERVER["SCRIPT_NAME"], "css", -3)?>";
+        var group = "<?=$_SESSION["group"]?>";
+    </script>
 </head>
 <body>
 <?php
@@ -13,8 +19,7 @@
 ?>
 <h1>Notification scheduler:</h1>
 <?php
-session_start();
-dueDateNotification();
+//dueDateNotification();
 
 function dueDateNotification()
 {
@@ -38,7 +43,7 @@ function dueDateNotification()
             //$dueDate = null;    //Set time to right now for testing
 
             $title = "⏰".$task->{"title"};
-            $body = "The following task is due right now: " . $task->{"title"} . ".\n\n Click this here to go to the turn in page.";
+            $body = "The following task is due soon: " . $task->{"title"} . ".\n\n Click this here to go to the turn in page.";
 
             $url = $task->{"html_url"};
 
@@ -73,8 +78,8 @@ function sendMessage($title, $body, $time, $url){
     //Build fields
     $fields = array(
         'app_id' => "d42d6e98-3d75-4968-bdf0-1cb00817fba3",
-        //This will be made group-specific in the future
-        'included_segments' => array('All'),
+        //Group/class filter
+        'filters' => array(array("field" => "tag", "key" => "group", "relation" => "=", "value" => $_SESSION["group"])),
         'contents' => $body,
         "headings" => $title,
         'send_after' => $time,

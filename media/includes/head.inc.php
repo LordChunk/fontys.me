@@ -44,10 +44,12 @@
         <meta name="author" content="Job van Ooik" />
         <meta name="robots" content="index, follow" />
 
-        <!-- Load css asynchronously -->
         <script>
             var cssFile = "<?=substr_replace($_SERVER["SCRIPT_NAME"], "css", -3)?>";
+            var group = "<?=$_SESSION["group"]?>";
         </script>
+
+        <!-- Load css asynchronously -->
         <script async src="/media/js/css.js" type="text/javascript"> </script>
 
         <!--Import jQuery before js with jQuery files-->

@@ -62,8 +62,6 @@ $_SESSION['ingelogd'] = true;
 //Add session timeout (the API server has a timeout but this isn't reported to the server or documented)
 $_SESSION["timeout"] = time();
 
-
-
 //Add new users to database
 include "connect-Freaze.inc.php";
 
@@ -97,6 +95,18 @@ $result = mysqli_query($conn, $sql1);
 
 $_SESSION["UID"] = mysqli_fetch_row($result)[0];
 
+//Set group session variable (class name, this is needed for e.g. notifications per class)
+require $_SERVER["DOCUMENT_ROOT"] . "/media/includes/FHICT_api.inc.php";
+$service = new FHICTService();
+
+$data = $service->getServiceData('/groups');
+foreach ($data as $group)
+{
+    if ($group->{"groupType"} == "Klas")
+    {
+        $_SESSION["group"] = $group->{"groupName"};
+    }
+}
 
 //Redirect back to the page we wanted to login too.
 header('Location: ' . $_SESSION['redirect_URL']);
