@@ -19,7 +19,7 @@ session_start();
 ?>
 <h1>Notification scheduler:</h1>
 <?php
-//dueDateNotification();
+dueDateNotification();
 
 function dueDateNotification()
 {
