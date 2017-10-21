@@ -12,7 +12,7 @@ dueDateNotification();
 function dueDateNotification()
 {
     //Get data from api
-    require $_SERVER["DOCUMENT_ROOT"] . "/media/includes/FHICT_api.inc.php";
+    require_once $_SERVER["DOCUMENT_ROOT"] . "/media/includes/FHICT_api.inc.php";
     $service = new FHICTService();
 
     $data = $service->getServiceData('/canvas/upcoming/me');
