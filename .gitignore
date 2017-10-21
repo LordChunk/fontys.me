@@ -25,6 +25,3 @@ media/includes/connect-Freaze\.inc\.php
 media/includes/connect-Hera\.inc\.php
 
 ns\.php
-!/OneSignalSDKUpdaterWorker.js
-!/OneSignalSDKWorker.js
-!/manifest.json

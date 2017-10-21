@@ -3,7 +3,9 @@
     session_start();
     //Easy title change
     $title = "FHICT Student Dashboard";
-    $nav = ["http://legacy.fontys.me" => "Legacy version"
+    //Standard nav items
+    $nav = ["http://legacy.fontys.me" => "Legacy",
+            "http://fontys.me" => "Master"
     ];
 
     //Check if session is time out
