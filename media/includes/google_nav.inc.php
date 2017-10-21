@@ -6,12 +6,13 @@ session_start();
  * Date: 02/10/2017
  * Time: 20:09
  */
-
+//Replace spaces with + to get a working URL
 $departure = str_ireplace(" ", "+", $_POST["departure"]);
 $arrival = str_ireplace(" ", "+", $_POST["arrival"]);
+//Set language
 $language = $_POST["language"];
 
-var_dump($departure, $arrival, $language);
+//var_dump($departure, $arrival, $language);
 
 
 //Check for enabled cookies
@@ -39,7 +40,8 @@ else
            setcookie("departure", $departure, time()+60*60*24*30, "/") &&
            setcookie("arrival", $arrival, time()+60*60*24*30, "/") &&
            setcookie("language", $language, time()+60*60*24*30, "/")
-        )
+        )//end if requirements
+        //if true then do this
         {
             echo "All cookies were set successfully.<br>";
             header("location: " . $_SESSION["redirect_URL"] . "?error=success");

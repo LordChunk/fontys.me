@@ -1,5 +1,5 @@
 <?php
-
+//This email was made with a third party service
 $teacher_name = $_POST["teacher_name"];
 
 $student_name = $_POST["student_name"];

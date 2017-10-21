@@ -24,6 +24,20 @@ $(document).ready(function () {
         }
 
     });
+
+    //Grid tester
+    // $.fn.widthStep = function(step)
+    // {
+    //     var width = $(this).width();
+    //     $(this).css('max-width', width - width%step);
+    // };
+    //
+    // $("#s1").widthStep(300);
+    // $("#s2").widthStep(300);
+    // $("#s3").widthStep(300);
+    // $("#s4").widthStep(300);
+    // $("#s5").widthStep(300);
+
 });
 
 //Cookie consent
