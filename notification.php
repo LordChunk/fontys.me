@@ -41,20 +41,26 @@
                     $datum = str_replace("T", " ", $datum);
                     $datum = str_replace("Z", " ", $datum) . " (CEST)";
 
-                    $body =
+                    //$datum = null;    //Set time to right now for testing
+
+
+                    $title = "⏰".$task->{"title"};
+                    $body = "The following task is due right now: " . $task->{"title"} . ".\n\n Click this here to go to the turn in page.";
+
+                    $url = $task->{"html_url"};
                     //Execute notification
-//                    $response = sendMessage();
-//                    $return["allresponses"] = $response;
-//                    $return = json_encode($return);
-//
-//                    echo("<br><br>JSON received:<br><br>");
-//                    echo($return);
+                    $response = sendMessage($title, $body, $datum, $url);
+                    $return["allresponses"] = $response;
+                    $return = json_encode($return);
+
+                    echo("<br><br>JSON received:<br><br>");
+                    echo($return);
                 }
             }
         }
 
         //Build message
-        function sendMessage($title, $body, $time){
+        function sendMessage($title, $body, $time, $url){
 
             //Convert into usable objects
             $body = array(
@@ -71,7 +77,8 @@
                 'included_segments' => array('All'),
                 'contents' => $body,
                 "headings" => $title,
-                'send_after' => $time
+                'send_after' => $time,
+                'url' => $url
             );
 
             $fields = json_encode($fields);
