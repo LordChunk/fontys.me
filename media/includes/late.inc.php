@@ -6,13 +6,6 @@
  * Time: 21:23
  */
 
-
-///
-///             THIS IS STILL WIP
-///
-
-
-
 session_start();
 $UID = $_SESSION["UID"];
 //Check when last email was send
