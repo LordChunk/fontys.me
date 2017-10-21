@@ -66,7 +66,6 @@ if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
                 </form>
             </div>
         </section>
-
         <section class="block" id="email_explanation_block">
             <h2>What does this do?</h2>
             <p>

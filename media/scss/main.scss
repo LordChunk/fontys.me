@@ -49,7 +49,8 @@ main {
   //Display grid setup
   //https://css-tricks.com/difference-explicit-implicit-grids/
   display: grid;
-  grid-template-columns: repeat(auto-fill, 340px);
+  //Generate columns for every item
+  grid-template-columns: repeat(auto-fit, 340px);
   grid-gap: 30px;
 
   width: 70%;
@@ -58,7 +59,7 @@ main {
   //Set space between elements and nav
   margin-top: 20px;
   max-width: 1280px;
-  justify-content: center;
+  justify-content: space-around;
 }
 //Use flexbox for mobile navigation
 @media (max-width: 800px) {
@@ -213,6 +214,8 @@ nav {
 
   input:not([type=radio]), textarea {
 	width: 80%;
+    //For some reason inputs and % don't scale too well so I added a max-width which stops it right at the width for a standard .block width (including padding etc.)
+    max-width: 260px;
     padding: 12px 20px;
 	border: 0;
 	border-bottom: 2px solid rgba(117, 117, 117, 0.5);
