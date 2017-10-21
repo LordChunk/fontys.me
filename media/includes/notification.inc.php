@@ -1,32 +1,20 @@
 <?php
-session_start();
-?>
-<html>
-<head>
-    <!--OneSignal-->
-    <link rel="manifest" href="/manifest.json">
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-    <script src="media/js/notification.js"></script>
-
-    <script>
-        var cssFile = "<?=substr_replace($_SERVER["SCRIPT_NAME"], "css", -3)?>";
-        var group = "<?=$_SESSION["group"]?>";
-    </script>
-</head>
-<body>
-<?php
+/**
+ * Created by PhpStorm.
+ * User: Job
+ * Date: 21/10/2017
+ * Time: 22:14
+ */
 //Notificatie: 1 dag en 1 week
-?>
-<h1>Notification scheduler:</h1>
-<?php
+
 dueDateNotification();
 
 function dueDateNotification()
 {
     //Get data from api
-    include "media/includes/FHICT_api.inc.php";
-
+    require $_SERVER["DOCUMENT_ROOT"] . "/media/includes/FHICT_api.inc.php";
     $service = new FHICTService();
+
     $data = $service->getServiceData('/canvas/upcoming/me');
 
     //Get list of due dates
@@ -87,13 +75,13 @@ function sendMessage($title, $body, $time, $url){
     );
 
     $fields = json_encode($fields);
-    echo("<br>JSON sent:<br>");
-    echo($fields . "<br>");
+//    echo("<br>JSON sent:<br>");
+//    echo($fields . "<br>");
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8',
-                                                        'Authorization: Basic ZGU0NTU3ZTktMGJhNC00ZDMwLThmZTItNTFlNWRkYWY2MjJm'));
+        'Authorization: Basic ZGU0NTU3ZTktMGJhNC00ZDMwLThmZTItNTFlNWRkYWY2MjJm'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     curl_setopt($ch, CURLOPT_HEADER, FALSE);
     curl_setopt($ch, CURLOPT_POST, TRUE);
@@ -106,11 +94,8 @@ function sendMessage($title, $body, $time, $url){
     $return["allresponses"] = $response;
     $return = json_encode($return);
 
-    echo("<br><br>JSON received:<br>");
-    echo($return . "<br>");
+//    echo("<br><br>JSON received:<br>");
+//    echo($return . "<br>");
 
     return $response;
 }
-?>
-</body>
-</html>

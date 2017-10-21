@@ -50,7 +50,12 @@
         </script>
 
         <!-- Load css asynchronously -->
-        <script async src="/media/js/css.js" type="text/javascript"> </script>
+        <script async src="/media/js/css.js" type="text/javascript"></script>
+
+        <!--Notification system -->
+        <link rel="manifest" href="/manifest.json">
+        <script async src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+        <script async src="/media/js/notification.js"></script>
 
         <!--Import jQuery before js with jQuery files-->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

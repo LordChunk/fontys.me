@@ -108,6 +108,9 @@ foreach ($data as $group)
     }
 }
 
+//Update notifications for group
+include ("notification.inc.php");
+
 //Redirect back to the page we wanted to login too.
 header('Location: ' . $_SESSION['redirect_URL']);
 ?>
