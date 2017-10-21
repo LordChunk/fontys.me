@@ -5,7 +5,7 @@
     <!--OneSignal-->
     <link rel="manifest" href="/manifest.json">
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-    <script async src="media/js/notification.js"></script>
+    <script src="media/js/notification.js"></script>
 </head>
 <body>
 <?php
@@ -14,36 +14,64 @@
     <form method="post" action="notification.php">
         <input name="body" placeholder="body">
         <input name="title" placeholder="title">
-
-
+        <input type="hidden" name="send" value="true">
+        <input type="submit">
     </form>
     <?PHP
-    if ($_POST["send"]){
+    //if ($_POST["send"] || true){
+        dueDateNotification();
 
-        //Get data from api
-        include "media/includes/FHICT_api.inc.php";
+        function dueDateNotification()
+        {
+            session_start();
+            //Get data from api
+            include "media/includes/FHICT_api.inc.php";
 
-        $service = new FHICTService();
-        $data = $service->getServiceData('/canvas/upcoming/me');
+            $service = new FHICTService();
+            $data = $service->getServiceData('/canvas/upcoming/me');
 
 
+            //Get list of due dates
+            foreach ($data as $task) {
+                //Check if due date is set
+                if($task->{"assignment"}->{"due_at"})
+                {
+                    $datum = $task->{"assignment"}->{"due_at"};
+                    //Parse to make usable
+                    $datum = str_replace("T", " ", $datum);
+                    $datum = str_replace("Z", " ", $datum) . " (CEST)";
+
+                    $body =
+                    //Execute notification
+//                    $response = sendMessage();
+//                    $return["allresponses"] = $response;
+//                    $return = json_encode($return);
+//
+//                    echo("<br><br>JSON received:<br><br>");
+//                    echo($return);
+                }
+            }
+        }
 
         //Build message
-        function sendMessage(){
-            $content = array(
-                "en" => 'Body enzo'
+        function sendMessage($title, $body, $time){
+
+            //Convert into usable objects
+            $body = array(
+                "en" => $body
             );
-            $headings = array(
-                'en' => "Titel"
+            $title = array(
+                'en' => $title
             );
 
+            //Build fields
             $fields = array(
                 'app_id' => "d42d6e98-3d75-4968-bdf0-1cb00817fba3",
+                //This will be made group-specific in the future
                 'included_segments' => array('All'),
-                //'data' => array("foo" => "bar"),
-                'contents' => $content,
-                "headings" => $headings,
-                //'send_after' => "2017-10-13 14:00:00 ". " (CEST)"
+                'contents' => $body,
+                "headings" => $title,
+                'send_after' => $time
             );
 
             $fields = json_encode($fields);
@@ -53,7 +81,7 @@
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8',
-                'Authorization: Basic ZGU0NTU3ZTktMGJhNC00ZDMwLThmZTItNTFlNWRkYWY2MjJm'));
+                                                                'Authorization: Basic ZGU0NTU3ZTktMGJhNC00ZDMwLThmZTItNTFlNWRkYWY2MjJm'));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
             curl_setopt($ch, CURLOPT_HEADER, FALSE);
             curl_setopt($ch, CURLOPT_POST, TRUE);
@@ -65,14 +93,7 @@
 
             return $response;
         }
-
-        $response = sendMessage();
-        $return["allresponses"] = $response;
-        $return = json_encode( $return);
-
-        echo("<br><br>JSON received:<br><br>");
-        echo($return);
-    }
+    //}
 
     ?>
 
