@@ -42,8 +42,14 @@ main {
   width: 70%;
   margin: 0 auto;
   margin-top: 20px;
-  max-width: 1280px; }
+  max-width: 1280px;
+  justify-content: center; }
 
+@media (max-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; } }
 /*make sure container elements stay in the center of the page */
 #logo {
   height: 1em; }
@@ -234,9 +240,7 @@ nav {
   max-width: 70vw;
   padding: 20px;
   /* Space between items */
-  margin-bottom: 30px;
-  flex-basis: auto;
-  flex-grow: 2; }
+  margin-bottom: 30px; }
   .block > :first-child {
     margin-top: 0; }
   .block :last-child {

@@ -43,27 +43,30 @@ a i {
 main {
   //Footer at bottom of page scaling
   flex: 1 0 auto;
-
 }
 //Containers are used as a wrapper for all the main elements on the page
 .container {
   //Display grid setup
+  //https://css-tricks.com/difference-explicit-implicit-grids/
   display: grid;
   grid-template-columns: repeat(auto-fill, 340px);
   grid-gap: 30px;
 
-  //FLEX setup
-  //Container class can't be applied to main cause this will mess up the scaling of .block elements in containers
-  //display: flex;
-  //flex-direction: row;
-  //flex-wrap: wrap;
-  //justify-content: space-between;
   width: 70%;
   //Center elements
   margin: 0 auto;
   //Set space between elements and nav
   margin-top: 20px;
   max-width: 1280px;
+  justify-content: center;
+}
+//Use flexbox for mobile navigation
+@media (max-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 /*make sure container elements stay in the center of the page */
 #logo {
@@ -311,9 +314,6 @@ nav {
   /* Space between items */
   //margin-right: 30px;
   margin-bottom: 30px;
-  flex-basis: auto;
-  flex-grow: 2;
-
   //Removes additional standard element top margin for elements like headers etc.
   > :first-child {
     margin-top: 0;
