@@ -181,7 +181,7 @@ $mail->Subject = "Te laat melding: ". $student_name;
 
 //$mail->addAddress("j.vanooik@student.fontys.nl");
 //$mail->addAddress("meowingdalmatian@protonmail.com");
-//$mail->addAddress($teacher_email);
+$mail->addAddress($teacher_email);
 $mail->addAddress($student_email);
 
 
