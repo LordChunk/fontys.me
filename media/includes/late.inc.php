@@ -25,7 +25,7 @@ $result = mysqli_query($conn, $sql);
 
 if (!$result){
     echo "an error occured<br>";
-    header('Location: /late?error=db');
+    header('Location: /late?error=sql');
     exit();
 }
 
@@ -33,44 +33,27 @@ $num_rows = mysqli_num_rows($result);
 $row = mysqli_fetch_row($result)[0];
 if ($num_rows == 0)
 {
-
+    echo "user has never user email service before <br>";
 }
 elseif ($num_rows == 1)
 {
     $last_sent = mysqli_fetch_row($result)[1]; //Get last send email time
-    if (time()+ (12 * 60 * 60) < $last_sent)    //Check for within 12 hours
+    if ($last_sent < time()+ (8 * 60 * 60))    //Check for within 12 hours
     {
         //Within 12 hours
         echo 'Wow no emails pls';
-        exit();
-    }
-
-    //Insert new time
-    $sql = "DELETE FROM late_email WHERE UID=".$UID.";
-            INSERT INTO late_email (UID, last_sent) VALUES (".$UID.", ".time().");";
-
-    $result = mysqli_query($conn, $sql);
-
-    if (!$result){
-        echo "an error occured<br>";
-        header('Location: /late?error=db');
+        header('Location: /late?error=cool_down');
         exit();
     }
 }
 else
 {
-    //header("location : /late?error=mutli_row");
-    var_dump($row);
+    header("location : /late?error=multi_row");
+    //var_dump($row);
     exit();
 }
 
-
-
-
-
-//Temp exit for testing
-exit();
-
+//User passed cool down check
 
 require $_SERVER["DOCUMENT_ROOT"] . "/media/includes/FHICT_api.inc.php";
 $service = new FHICTService();
@@ -210,6 +193,13 @@ $mail->addAddress($student_email);
 if($mail->send())
 {
     echo "email was send successfully";
+
+    //Email was send so delete old record in database and replace it with the new one
+    //Remove old value and insert new last send time
+    $sql = "DELETE FROM late_email WHERE UID=".$UID.";
+             INSERT INTO late_email (UID, last_sent) VALUES (".$UID.", ".time().");";
+
+    $result = mysqli_multi_query($conn, $sql);
 }
 else
 {
