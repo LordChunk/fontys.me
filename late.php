@@ -1,12 +1,9 @@
 <?php
 include "media/includes/head.inc.php";
 
-
-//Disabled admin page
-                                    /*Temp admin restriction*/
-//if($_SESSION['ingelogd'] !== true && $_SESSION["username"] != "i380420"){
-//    header("location: /login");
-//}
+if($_SESSION['ingelogd'] !== true){
+    header("location: /login");
+}
 ?>
 <!-- Body -->
 <main>
