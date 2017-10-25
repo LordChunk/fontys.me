@@ -252,6 +252,10 @@ nav {
     margin-right: 0;
     width: 100%;
     max-width: 100%; } }
+@media (max-width: 340px) {
+  .block {
+    padding: 20px 10px;
+    border-radius: 2px; } }
 .template_img {
   max-width: 100%;
   height: auto;

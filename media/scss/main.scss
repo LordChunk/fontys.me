@@ -341,6 +341,13 @@ nav {
     max-width: 100%;
   }
 }
+//Blocks usually have a width of 340 px to prevent it from extending past the screen I remove most of the padding to make sure it works on an iPhone 5
+@media (max-width: 340px) {
+  .block {
+    padding: 20px 10px;
+    border-radius: 2px;
+  }
+}
 //explanation images
 .template_img {
   max-width: 100%;
