@@ -4,7 +4,7 @@ session_start();
 //Easy title change
 $title = "FHICT Student Dashboard";
 //Standard nav items
-$nav = ["notification" => "Due date notifications",
+$nav = ["notification" => "Due Date Notifications",
         "http://legacy.fontys.me" => "Legacy",
         "http://fontys.me" => "Master",
 ];
