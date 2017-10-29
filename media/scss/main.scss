@@ -263,45 +263,44 @@ nav {
 	font-size: x-large;
 	font-weight: normal;
   }
-
-  button {
-	height: 40px;
-  }
-
-  /*Make icon and text same size */
-  .input-confirm * {
-	font-size: 1em;
-	color: white;
-	padding: 0 10px;
-  }
-
-  .input-confirm i {
-	line-height: 1;
-	vertical-align: middle;
-	margin: 0;
-  }
-
-  .input-confirm {
-	min-width: fit-content;
-	cursor: pointer;
-	background: $accent_colour;
-	border: 0;
-	border-radius: 2px;
-	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-	-moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-	/*hover animation */
-    transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
-    transition-duration: 0.3s;
-  }
-
-  .input-confirm:hover {
-	background: $accent_colour_focus;
-	-webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
-	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
-  }
 }
+//Moved form buttons outside form div class so their styling can be used by other objects as well
+/*Make icon and text same size */
+.input-confirm * {
+  font-size: 1em;
+  color: white;
+  padding: 0 10px;
+}
+
+.input-confirm i {
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.input-confirm {
+  height: 40px;
+  min-width: fit-content;
+  cursor: pointer;
+  background: $accent_colour;
+  border: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  /*hover animation */
+  transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
+  transition-duration: 0.3s;
+}
+
+.input-confirm:hover {
+  background: $accent_colour_focus;
+  -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+
 /*Error handling css*/
 #button_error {
   width: auto;
@@ -339,6 +338,13 @@ nav {
     margin-right: 0;
     width: 100%;
     max-width: 100%;
+  }
+}
+//Blocks usually have a width of 340 px to prevent it from extending past the screen I remove most of the padding to make sure it works on an iPhone 5
+@media (max-width: 340px) {
+  .block {
+    padding: 20px 10px;
+    border-radius: 2px;
   }
 }
 //explanation images

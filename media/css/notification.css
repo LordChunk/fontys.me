@@ -1,0 +1,9 @@
+.OneSignal-permission-iframe {
+  width: 560px;
+  height: 440px;
+  border-radius: 5px; }
+
+@media (max-width: 560px) {
+  border-radius: 0; }
+
+/*# sourceMappingURL=notification.css.map */
