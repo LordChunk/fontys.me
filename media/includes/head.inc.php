@@ -4,7 +4,7 @@ session_start();
 //Easy title change
 $title = "FHICT Student Dashboard";
 //Standard nav items
-$nav = ["notification" => "Due Date Notifications",
+$nav = [
         "http://legacy.fontys.me" => "Legacy",
         "http://fontys.me" => "Master",
 ];
@@ -25,6 +25,7 @@ if ($_SESSION[ingelogd] !== true)
 } else
 {
     $nav =  ["logout" => "Logout",
+            "notification" => "Due Date Notifications",
             "subdomain" => "Request a Fontys.me Subdomain",
             'late' => "\"I'm Late\" Email Service"] + $nav;
 }

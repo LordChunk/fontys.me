@@ -1,6 +1,12 @@
 console.log("Main.js loaded.");
 /* Jquery stuff */
 $(document).ready(function () {
+    $("#notif-permission").click(function () {
+        console.log("reloading body");
+        $.get('/notification', function (data) {
+            $('body').html(data);
+        });
+    });
 
     //Set the side nav right above the screen on load
     $("#side-nav").css("top", -$('#side-nav').height());
@@ -24,19 +30,6 @@ $(document).ready(function () {
         }
 
     });
-
-    //Grid tester
-    // $.fn.widthStep = function(step)
-    // {
-    //     var width = $(this).width();
-    //     $(this).css('max-width', width - width%step);
-    // };
-    //
-    // $("#s1").widthStep(300);
-    // $("#s2").widthStep(300);
-    // $("#s3").widthStep(300);
-    // $("#s4").widthStep(300);
-    // $("#s5").widthStep(300);
 
 });
 

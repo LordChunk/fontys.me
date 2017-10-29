@@ -1,0 +1,10 @@
+.OneSignal-permission-iframe {
+  width: 560px;
+  height: 440px;
+  border-radius: 5px;
+}
+//Screen width detector for OneSignal
+//This will remove the rounded corners on the full screen popup on mobile
+@media (max-width: 560px) {
+  border-radius: 0;
+}

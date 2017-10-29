@@ -158,8 +158,7 @@ nav {
   width: 300px;
   max-width: 70vw;
   /*input interaction animations*/
-  /*Custom styling for form header*/
-  /*Make icon and text same size */ }
+  /*Custom styling for form header*/ }
   .form_div form > * {
     margin-top: 16px; }
   .form_div form > label {
@@ -191,33 +190,37 @@ nav {
     margin: 0;
     font-size: x-large;
     font-weight: normal; }
-  .form_div button {
-    height: 40px; }
-  .form_div .input-confirm * {
-    font-size: 1em;
-    color: white;
-    padding: 0 10px; }
-  .form_div .input-confirm i {
-    line-height: 1;
-    vertical-align: middle;
-    margin: 0; }
-  .form_div .input-confirm {
-    min-width: fit-content;
-    cursor: pointer;
-    background: #26a69a;
-    border: 0;
-    border-radius: 2px;
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
-    /*hover animation */
-    transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
-    transition-duration: 0.3s; }
-  .form_div .input-confirm:hover {
-    background: #26A69A;
-    -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
-    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3); }
+
+/*Make icon and text same size */
+.input-confirm * {
+  font-size: 1em;
+  color: white;
+  padding: 0 10px; }
+
+.input-confirm i {
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0; }
+
+.input-confirm {
+  height: 40px;
+  min-width: fit-content;
+  cursor: pointer;
+  background: #26a69a;
+  border: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  /*hover animation */
+  transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
+  transition-duration: 0.3s; }
+
+.input-confirm:hover {
+  background: #26A69A;
+  -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3); }
 
 /*Error handling css*/
 #button_error {
