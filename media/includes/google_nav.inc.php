@@ -7,8 +7,8 @@ session_start();
  * Time: 20:09
  */
 //Replace spaces with + to get a working URL
-$departure = str_ireplace(" ", "+", $_POST["departure"]);
-$arrival = str_ireplace(" ", "+", $_POST["arrival"]);
+$departure = htmlspecialchars(str_ireplace(" ", "+", $_POST["departure"]));
+$arrival = htmlspecialchars(str_ireplace(" ", "+", $_POST["arrival"]));
 //Set language
 $language = $_POST["language"];
 
