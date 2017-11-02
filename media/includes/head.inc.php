@@ -20,10 +20,10 @@ $_SESSION['redirect_URL'] = $_SERVER['REQUEST_URI'];
 //Customise nav depending no login status
 if ($_SESSION[ingelogd] !== true)
 {
-    $nav = ["/login" => "Login"] + $nav;
+    $nav = ["http://" . $_SERVER['HTTP_HOST'] . "/login" => "Login"] + $nav;
 } else
 {
-    $nav =  ["logout" => "Logout",
+    $nav =  ["http://" . $_SERVER['HTTP_HOST'] . "/logout" => "Logout",
             "notification" => "Due Date Notifications",
             "subdomain" => "Request a Fontys.me Subdomain",
             'late' => "\"I'm Late\" Email Service"] + $nav;
@@ -46,12 +46,11 @@ if ($_SESSION[ingelogd] !== true)
     <meta name="robots" content="index, follow" />
 
     <script>
-        var cssFile = "<?=substr_replace($_SERVER["SCRIPT_NAME"], "css", -3)?>";
         var group = "<?=$_SESSION["group"]?>";
     </script>
 
     <!-- Load css asynchronously -->
-    <script async src="/media/js/css.js" type="text/javascript"></script>
+    <script async src="/media/js/css.js" type="text/javascript" ></script>
 
     <!--Notification system -->
     <link rel="manifest" href="/manifest.json">

@@ -7,3 +7,5 @@
  */
 
 include "media/includes/logout.inc.php";
+
+?>

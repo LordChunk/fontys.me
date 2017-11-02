@@ -1,7 +1,18 @@
+//$_SERVER['REQUEST_URI'] javascript alternative
+function requestURI() {
+    var uri = location.pathname.substr(1).split('/');
+    if(0 in uri && uri[0] != "") {
+        var page = uri[0];
+    } else {
+        var page = "index";
+    }
+    return page;
+}
+
 //Loading css asynchronously
 loadCss("https://fonts.googleapis.com/icon?family=Material+Icons");
 loadCss("/media/css/main.css");
-loadCss("/media/css/" + cssFile);
+loadCss("/media/css/" + requestURI()  + ".css");
 loadCss("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
 
 function loadCss(url) {

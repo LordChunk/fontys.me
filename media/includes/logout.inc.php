@@ -15,4 +15,3 @@ session_destroy(); // Destroy the session
 
 //This prevents the user from being logged back in, in case they were on a auto login page (e.g. /subdomain)
 header("location: /");
-?>
