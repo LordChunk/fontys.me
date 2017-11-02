@@ -47,12 +47,11 @@ if ($_SESSION[ingelogd] !== true)
     <meta name="robots" content="index, follow" />
 
     <script>
-        var cssFile = "<?=substr_replace($_SERVER["SCRIPT_NAME"], "css", -3)?>";
         var group = "<?=$_SESSION["group"]?>";
     </script>
 
     <!-- Load css asynchronously -->
-    <script async src="/media/js/css.js" type="text/javascript"></script>
+    <script async src="/media/js/css.js" type="text/javascript" ></script>
 
     <!--Notification system -->
     <link rel="manifest" href="/manifest.json">

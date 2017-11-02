@@ -1,4 +1,39 @@
 console.log("Main.js loaded.");
+
+
+//Better page loading
+//Select internal links
+$("a:not([href*='//'])").click(function(event)
+    {
+        //Prevent default page load
+        event.preventDefault();
+        //Load in new link
+        loadNewPage(this.href);
+    }
+);
+
+//Load pages better
+function loadNewPage(url) {
+    //Remove old CSS File
+    $("link[href*="+ requestURI()).remove();
+
+    //Change URL to new url
+    history.pushState("","",url);
+    //Load in page contents
+    $("main").load(url+" main", function (response)
+        {
+            //Check if loaded element is empty e.g. login page or failed load
+            if (response === undefined)
+            {
+                //Reload page to serve proper content
+                window.location.reload(false);
+            }
+        }
+    );
+    //Load new css file
+    loadCss("/media/css/" + requestURI() + ".css");
+}
+
 /* Jquery stuff */
 $(document).ready(function () {
     $("#notif-permission").click(function () {
@@ -9,6 +44,7 @@ $(document).ready(function () {
     });
 
     //Set the side nav right above the screen on load
+    //Somehow this doesn't always work, not quite sure why
     $("#side-nav").css("top", -$('#side-nav').height());
 
     //Navbar animation
