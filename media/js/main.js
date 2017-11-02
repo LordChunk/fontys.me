@@ -16,7 +16,7 @@ $("a:not([href*='//'])").click(function(event)
 //URL is page url, back = did the user want to go back a page (important for javascript or client link rewrites)
 function loadNewPage(url, back) {
     //Remove old CSS File
-    $("link[href*="+ requestURI()).remove();
+    $("link[href*="+ requestURI()+ "]").remove();
 
     //Check for index link and replace with
     if (url === "index")
