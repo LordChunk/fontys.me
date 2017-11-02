@@ -21,10 +21,10 @@ $_SESSION['redirect_URL'] = $_SERVER['REQUEST_URI'];
 //Customise nav depending no login status
 if ($_SESSION[ingelogd] !== true)
 {
-    $nav = ["/login" => "Login"] + $nav;
+    $nav = ["http://" . $_SERVER['HTTP_HOST'] . "/login" => "Login"] + $nav;
 } else
 {
-    $nav =  ["logout" => "Logout",
+    $nav =  ["http://" . $_SERVER['HTTP_HOST'] . "/logout" => "Logout",
             "notification" => "Due Date Notifications",
             "subdomain" => "Request a Fontys.me Subdomain",
             'late' => "\"I'm Late\" Email Service"] + $nav;

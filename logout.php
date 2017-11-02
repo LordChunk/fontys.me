@@ -1,4 +1,4 @@
-<main><?php
+<?php
 /**
  * Created by PhpStorm.
  * User: Job
@@ -9,5 +9,3 @@
 include "media/includes/logout.inc.php";
 
 ?>
-</main>
-

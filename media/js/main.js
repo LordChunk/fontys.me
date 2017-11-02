@@ -13,12 +13,24 @@ $("a:not([href*='//'])").click(function(event)
 );
 
 //Load pages better
-function loadNewPage(url) {
+//URL is page url, back = did the user want to go back a page (important for javascript or client link rewrites)
+function loadNewPage(url, back) {
     //Remove old CSS File
     $("link[href*="+ requestURI()).remove();
 
-    //Change URL to new url
-    history.pushState("","",url);
+    //Check for index link and replace with
+    if (url === "index")
+    {
+        url = "/";
+    }
+
+    //Check if user is going back, in which case don't rewrite the URL since this is already done by the client
+    if(!back)
+    {
+        //Change URL to new url
+        history.pushState("","",url);
+    }
+
     //Load in page contents
     $("main").load(url+" main", function (response)
         {
@@ -33,6 +45,13 @@ function loadNewPage(url) {
     //Load new css file
     loadCss("/media/css/" + requestURI() + ".css");
 }
+
+//User goes back a page
+window.onpopstate = function() {
+    //RequestURI is new page URI, also user goes back via history so back = true
+    loadNewPage(requestURI(), true);
+};
+
 
 /* Jquery stuff */
 $(document).ready(function () {
