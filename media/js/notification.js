@@ -56,13 +56,6 @@ OneSignal.push(function ()
                 //Set global subscription value
                 window.subscriptionEnabled = true;
             }
-            else
-            {
-                //Paste disabled text
-                document.getElementById("checkSubscription").innerHTML = "disabled";
-                //Set global subscription value
-                window.subscriptionEnabled = false;
-            }
         }
     });
 

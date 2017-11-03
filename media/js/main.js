@@ -80,8 +80,6 @@ $(document).ready(function () {
         $('#side-nav').animate({"top": -$('#side-nav').height()}, "slow");
     });
 
-
-
     //Do redirect for desktop and open nav bar for mobile
     if ($(window).width() < 800)
     {

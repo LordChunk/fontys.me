@@ -20,7 +20,7 @@ if($_SESSION['ingelogd'] !== true){
         </section>
         <section class="block">
             <h1>Subscribe to Due Date Notifications</h1>
-            <p>You are currently <b id="checkSubscription"></b> to Canvas Due Date Notifications.</p>
+            <p>You are currently <b id="checkSubscription">disabled</b> to Canvas Due Date Notifications.</p>
             <button onclick="register()" class="input-confirm">
                 <span>
                     Enable notifications
