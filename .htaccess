@@ -7,6 +7,12 @@ RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
 
 #php_value auto_prepend_file "/public_html/media/includes/head.inc.php"
 
+#www.* redirect
+RewriteCond %{HTTP_HOST} ^www.fontys.me [NC]
+RewriteRule ^(.*)$ http://fontys.me/$1 [L,R=301,NC]
 
 #Pluff redirect
 Redirect /pluff https://pluff.venus.fhict.nl/
+# redirect pluff.fontys.me
+RewriteCond %{HTTP_HOST} ^pluff.fontys.me
+RewriteRule ^(.*)$ http://pluff.venus.fhict.nl/ [L,NC,QSA]
