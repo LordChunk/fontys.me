@@ -35,11 +35,17 @@ function loadNewPage(url, back) {
     }
 
     //Load in page contents and add fade
-    $("main").animate({opacity: 0}, 200, function () {
+    $("main").animate({
+        'opacity' : 0,
+        'padding-top' : 5,
+    }, 200, function () {
        $(this).load(url+" main > *",
            function (response)
            {
-               $(this).animate({opacity: 1}, 500);
+               $(this).animate({
+                   'opacity' : 1,
+                   'padding-top' : 0
+               }, 500);
                //Check if loaded element is empty e.g. login page or failed load
                if (response === undefined)
                {

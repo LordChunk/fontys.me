@@ -1,13 +1,6 @@
 //First CSS that is loaded in. Should be a small document that is loaded quickly
-main {
-  animation: fadein 2s;
-}
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to   {
-    opacity: 1;
-  }
+//Prevent random text without styling from popping up
+* {
+  opacity: 0;
 }
