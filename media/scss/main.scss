@@ -1,6 +1,23 @@
 //Import colour pallets
 @import "colour";
+//Revert temporary CSS from start.css
+* {
+  opacity: 1;
+}
+main {
+  animation: fadein 2s;
+}
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to   {
+    opacity: 1;
+  }
+}
+
+//Start main.css
 * {
   font-family: 'Roboto', sans-serif;
   outline: none; //Prevent button outlines etc.
@@ -151,6 +168,7 @@ nav {
 /*Mobile nav */
 #side-nav {
   top: -100000vh; //This is now handled using js (see main.js)
+  z-index: 900; //Prevents pages from overlaying when loading new page
 }
 
 #mobile-nav {

@@ -1,4 +1,15 @@
 * {
+  opacity: 1; }
+
+main {
+  animation: fadein 2s; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+* {
   font-family: 'Roboto', sans-serif;
   outline: none; }
 
@@ -108,7 +119,8 @@ nav {
 
 /*Mobile nav */
 #side-nav {
-  top: -100000vh; }
+  top: -100000vh;
+  z-index: 900; }
 
 #mobile-nav ul {
   list-style-type: none;
