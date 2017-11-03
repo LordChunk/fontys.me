@@ -96,7 +96,7 @@
                 echo "You must login to use this feature.";
             }
             ?>
-            <p class="font_weight_normal">For more info, go to: <a class="font_weight_normal" target="_blank" href="https://pluff.venus.fhict.nl">Pluff</a></p>
+            <p class="font_weight_normal">For more info, go to: <a class="font_weight_normal" target="_blank" href="/pluff">Pluff</a></p>
         </section>
 
         <!--Weather block-->
