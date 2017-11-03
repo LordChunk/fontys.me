@@ -50,6 +50,9 @@ if ($_SESSION[ingelogd] !== true)
         var group = "<?=$_SESSION["group"]?>";
     </script>
 
+    <!--Minimal CSS -->
+    <link rel="stylesheet" type="text/css" href="/media/css/start.css" />
+
     <!-- Load css asynchronously -->
     <script async src="/media/js/css.js" type="text/javascript" ></script>
 

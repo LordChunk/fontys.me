@@ -4,19 +4,22 @@ console.log("Main.js loaded.");
 //Better page loading
 //Select internal links
 $("a:not([href*='//'])").click(function(event)
+{
+    //Check for empty URLs (nav trigger buttons etc.)
+    if(this.href !== "")
     {
         //Prevent default page load
         event.preventDefault();
         //Load in new link
         loadNewPage(this.href);
     }
-);
+});
 
 //Load pages better
 //URL is page url, back = did the user want to go back a page (important for javascript or client link rewrites)
 function loadNewPage(url, back) {
     //Remove old CSS File
-    $("link[href*="+ requestURI()).remove();
+    $("link[href*="+ requestURI() + "]").remove();
 
     //Check for index link and replace with
     if (url === "index")
@@ -31,17 +34,22 @@ function loadNewPage(url, back) {
         history.pushState("","",url);
     }
 
-    //Load in page contents
-    $("main").load(url+" main", function (response)
-        {
-            //Check if loaded element is empty e.g. login page or failed load
-            if (response === undefined)
-            {
-                //Reload page to serve proper content
-                window.location.reload(false);
-            }
-        }
-    );
+    //Load in page contents and add fade
+    $("main").animate({opacity: 0}, 200, function () {
+       $(this).load(url+" main > *",
+           function (response)
+           {
+               $(this).animate({opacity: 1}, 500);
+               //Check if loaded element is empty e.g. login page or failed load
+               if (response === undefined)
+               {
+                   //Reload page to serve proper content
+                   window.location.reload(false);
+               }
+           }
+       )
+    });
+
     //Load new css file
     loadCss("/media/css/" + requestURI() + ".css");
 }
@@ -67,25 +75,27 @@ $(document).ready(function () {
     $("#side-nav").css("top", -$('#side-nav').height());
 
     //Navbar animation
-    $('#close_mobile_nav').click(function () {
+    //Navbar now also closes when clicking any other item withing the nav bar
+    $('#close_mobile_nav, #side-nav *').click(function () {
         $('#side-nav').animate({"top": -$('#side-nav').height()}, "slow");
     });
 
-    $('#open_mobile_nav').click(function () {
 
-        //Do redirect for desktop and open nav bar for mobile
-        if ($(window).width() < 800)
-        {
-            $('#side-nav').animate({"top": "0px"}, "slow");
-        }
-        else
-        {
-            //Make logo element clickable as home button for desktop version
-            window.location.href="/";
-        }
 
-    });
-
+    //Do redirect for desktop and open nav bar for mobile
+    if ($(window).width() < 800)
+    {
+        //Change attribute href and check for click event
+        $('#open_mobile_nav').click(function () {
+                $('#side-nav').animate({"top": "0px"}, "slow");
+            }
+        );
+    }
+    else
+    {
+        //Make logo element clickable as home button for desktop version
+        $("#open_mobile_nav").attr("href", "/");
+    }
 });
 
 //Cookie consent

@@ -108,7 +108,8 @@ nav {
 
 /*Mobile nav */
 #side-nav {
-  top: -100000vh; }
+  top: -100000vh;
+  z-index: 900; }
 
 #mobile-nav ul {
   list-style-type: none;

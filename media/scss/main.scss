@@ -151,6 +151,7 @@ nav {
 /*Mobile nav */
 #side-nav {
   top: -100000vh; //This is now handled using js (see main.js)
+  z-index: 900; //Prevents pages from overlaying when loading new page
 }
 
 #mobile-nav {

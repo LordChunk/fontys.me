@@ -102,12 +102,18 @@
         <!--Weather block-->
         <section class="block" id="weather">
             <h1>Weather:</h1>
-                <div id="weather_iframe_wrapper">
-                    <iframe class="weather_iframe" id="weather_iframe_desktop" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2b&voor=1">
-                    </iframe>
-                    <iframe  class="weather_iframe" id="weather_iframe_mobile" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2&voor=1">
-                    </iframe>
-                </div>
+            <!--Weather.io widget-->
+            <a class="weatherwidget-io" href="https://forecast7.com/en/51d445d47/eindhoven/" data-label_1="Eindhoven" data-label_2="Weather" data-font="Roboto" data-days="3" data-theme="pure" data-baseColor="" data-accent="rgba(1, 1, 1, 0.03)" data-textColor="#343434" data-highColor="#f92e2e" data-lowColor="#1176ba" >Eindhoven Weather</a>
+            <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
+            </script>
+
+<!--            <div id="weather_iframe_wrapper">-->
+<!--                <iframe class="weather_iframe" id="weather_iframe_desktop" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2b&voor=1">-->
+<!--                </iframe>-->
+<!--                <iframe  class="weather_iframe" id="weather_iframe_mobile" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2&voor=1">-->
+<!--                </iframe>-->
+<!--            </div>-->
         </section>
 
         <!--Normal transit block -->
