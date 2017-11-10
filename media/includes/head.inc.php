@@ -2,16 +2,15 @@
 //Temp redirect
 //header('location: https://dev.fontys.me');
 
-session_start();
 $_SESSION['redirect_URL'] = "http://fontys.me". $_SERVER['REQUEST_URI'];
 $title = "Fontys.me";
 $nav = [
-    //"/" => "Home"
+    "//fontys.me" => "Current version"
 ];
 //Check if user is logged in
 if ($_SESSION[ingelogd] !== true)
 {
-    $nav = $nav + ["login.php" => "Login"];
+    $nav = $nav + ["#" => "Login [Disabled]"];
 } else
 {
     $nav = $nav + ["subdomain" => "Request a fontys.me subdomain",
