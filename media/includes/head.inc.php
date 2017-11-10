@@ -1,6 +1,6 @@
 <?php
 //Temp redirect
-header('location: https://dev.fontys.me');
+//header('location: https://dev.fontys.me');
 
 session_start();
 $_SESSION['redirect_URL'] = "http://fontys.me". $_SERVER['REQUEST_URI'];
@@ -24,7 +24,7 @@ if ($_SESSION[ingelogd] !== true)
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="https://materialize.van-ooik.nl/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
 
 
     <!--Let browser know website is optimized for mobile-->
@@ -38,10 +38,10 @@ if ($_SESSION[ingelogd] !== true)
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="https://materialize.van-ooik.nl/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
 
     <!--Files I didn't find on the dark web-->
-    <link rel="stylesheet" type="text/css" href="./media/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/media/css/main.css">
     <!--My own javascript stuff -->
     <script src="../js/main.js" type="text/javascript"></script>
 
