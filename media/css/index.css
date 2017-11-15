@@ -12,7 +12,8 @@
 
 /*Transit info styling */
 #transit_block {
-  grid-column-start: span 2; }
+  grid-column-start: span 2;
+  max-width: unset; }
 
 #transit_info {
   width: 100%; }

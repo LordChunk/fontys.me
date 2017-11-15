@@ -19,6 +19,7 @@
 /*Transit info styling */
 #transit_block {
   grid-column-start: span 2;
+  max-width: unset;
 }
 #transit_info {
   .td_devider {
