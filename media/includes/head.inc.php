@@ -1,6 +1,7 @@
 <?php
 //Start session for every page
 session_start();
+$_SESSION["ingelogd"] = true;
 //Easy title change
 $title = "FHICT Student Dashboard Demo";
 //Standard nav items

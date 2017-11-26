@@ -1,9 +1,5 @@
 <?php
 include "media/includes/head.inc.php";
-
-if($_SESSION['ingelogd'] !== true){
-    header("location: /login");
-}
 ?>
 <!-- Body -->
 <main>
@@ -11,7 +7,7 @@ if($_SESSION['ingelogd'] !== true){
         <section class="block">
             <div class="form_div">
                 <h5 class="form_header">Request a domain here:</h5>
-                <form action="/media/includes/subdomain_add.inc.php" method="POST">
+                <form action="#" method="POST">
 
                     <div class="input-field">
                         <input type="text" id="subdomain" name="subdomain" placeholder="Subdomain" data-length="50" required>

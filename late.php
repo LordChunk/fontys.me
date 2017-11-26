@@ -1,9 +1,5 @@
 <?php
 include "media/includes/head.inc.php";
-
-if($_SESSION['ingelogd'] !== true){
- //   header("location: /login");
-}
 ?>
 <!-- Body -->
 <main>
@@ -27,7 +23,7 @@ if($_SESSION['ingelogd'] !== true){
                     <div class="input-field">
                         <br>
                         <span>DEMO ONLY:<br> Please enter your email address.</span><br>
-                        <input type="email" id="email_address" name="email_address" required>
+                        <input type="email" id="email_address" name="email_address" placeholder="demo@fontys.me" required>
                     </div>
 
                     <div id="button_error">

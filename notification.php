@@ -7,9 +7,6 @@
  */
 
 require_once "media/includes/head.inc.php";
-if($_SESSION['ingelogd'] !== true){
-    header("location: /login");
-}
 ?>
 <main>
     <div class="container">
