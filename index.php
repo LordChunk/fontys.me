@@ -8,46 +8,28 @@
         <!--To-do list-->
         <section class="block">
             <h1>Canvas To-Do List:</h1>
-
-                <?php
-                /*
-                 * Canvas to-do list
-                 */
-                if($_SESSION["ingelogd"])
-                {
-                    $service = new FHICTService();
-                    $data = $service->getServiceData('/canvas/todo/me');
-                    if($data)
-                    {?>
-                        <ul>
-                            <?php
-                            foreach ($data as $todo)
-                            {?>
-                                <li>
-                                    <?=$todo->{"assignment"}->{"name"}?>
-                                    <a href="<?=$todo->{"assignment"}->{"html_url"}?>" target="_blank">
-                                        <i class="material-icons">link</i>
-                                    </a>
-                                </li>
-                                <?php
-                            }
-                            ?>
-                        </ul>
-                        <?php
-                    }
-                    else
-                    {
-                        //empty response
-                        echo "Your to-do list is empty.";
-                    }
-                }
-                else
-                {
-                    //not logged in response
-                    echo "You must login to use this feature.";
-                }
-
-                ?>
+            <ul>
+                <li>
+                    Feedback op concept Proftaak <a href="https://fhict.instructure.com/courses/5212/assignments/70858" target="_blank">
+                        <i class="material-icons">link</i>
+                    </a>
+                </li>
+                <li>
+                    Inleveren concept voor Proftaak <a href="https://fhict.instructure.com/courses/5212/assignments/70863" target="_blank">
+                        <i class="material-icons">link</i>
+                    </a>
+                </li>
+                <li>
+                    Inleveren definitief Concept Proftaak <a href="https://fhict.instructure.com/courses/5212/assignments/70864" target="_blank">
+                        <i class="material-icons">link</i>
+                    </a>
+                </li>
+                <li>
+                    Inleveren voor Feedbackmoment <a href="https://fhict.instructure.com/courses/5196/assignments/70628" target="_blank">
+                        <i class="material-icons">link</i>
+                    </a>
+                </li>
+            </ul>
         </section>
         <!--Schedule today-->
         <section class="block">
@@ -58,7 +40,6 @@
              */
             if($_SESSION["ingelogd"])
             {
-
                 $data = $service->getServiceData('/schedule/me?days=1');
                 if ($data)
                 {?>
@@ -107,13 +88,6 @@
             <script>
                 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
             </script>
-
-<!--            <div id="weather_iframe_wrapper">-->
-<!--                <iframe class="weather_iframe" id="weather_iframe_desktop" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2b&voor=1">-->
-<!--                </iframe>-->
-<!--                <iframe  class="weather_iframe" id="weather_iframe_mobile" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=51.44083&lng=5.47778&overname=2&zoom=8&naam=eindhoven&size=2&voor=1">-->
-<!--                </iframe>-->
-<!--            </div>-->
         </section>
 
         <!--Normal transit block -->

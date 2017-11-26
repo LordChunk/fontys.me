@@ -2,7 +2,7 @@
 include "media/includes/head.inc.php";
 
 if($_SESSION['ingelogd'] !== true){
-    header("location: /login");
+ //   header("location: /login");
 }
 ?>
 <!-- Body -->
@@ -23,6 +23,11 @@ if($_SESSION['ingelogd'] !== true){
                         <span>Reason (optional):</span><br>
                         <textarea form="late_form" id="reason" name="reason" placeholder="Dentist"></textarea>
                         <!--<label for="IP">IP (IPv4)</label>-->
+                    </div>
+                    <div class="input-field">
+                        <br>
+                        <span>DEMO ONLY:<br> Please enter your email address.</span><br>
+                        <input type="email" id="email_address" name="email_address" required>
                     </div>
 
                     <div id="button_error">

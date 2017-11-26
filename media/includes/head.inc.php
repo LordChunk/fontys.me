@@ -2,10 +2,10 @@
 //Start session for every page
 session_start();
 //Easy title change
-$title = "FHICT Student Dashboard";
+$title = "FHICT Student Dashboard Demo";
 //Standard nav items
 $nav = [
-        "http://legacy.fontys.me" => "Legacy",
+        "http://fontys.me" => "Live version",
 ];
 
 //Check if session is time out
