@@ -6,7 +6,7 @@ include "media/includes/head.inc.php";
     <div class="container">
         <section class="block">
             <div class="form_div">
-                <h5 class="form_header">Request a domain here:</h5>
+                <h1 class="form_header">Request a domain here:</h1>
                 <form action="#" method="POST">
 
                     <div class="input-field">

@@ -202,9 +202,7 @@ nav {
   .form_div .input-field {
     width: 90%; }
   .form_div .form_header {
-    margin: 0;
-    font-size: x-large;
-    font-weight: normal; }
+    margin: 0; }
 
 /*Make icon and text same size */
 .input-confirm * {

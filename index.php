@@ -34,51 +34,27 @@
         <!--Schedule today-->
         <section class="block">
             <h1>Schedule for Today:</h1>
-            <?php
-            /*
-             * Schedule today
-             */
-            if($_SESSION["ingelogd"])
-            {
-                $data = $service->getServiceData('/schedule/me?days=1');
-                if ($data)
-                {?>
-                    <table>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Start</th>
-                            <th>End</th>
-                        </tr>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Start</th>
+                    <th>End</th>
+                </tr>
 
-                        <?php
-                        //var_dump(json_encode($data));
-                        foreach ($data->{"data"} as $course) {
-                            ?>
-                            <tr>
-                                <td><?=$course->{"subject"} ?></td>
-                                <td><?=substr($course->{"start"}, -8, 5)?></td>
-                                <td><?=substr($course->{"end"}, -8, 5)?></td>
-                            </tr>
-                            <?php
-                        }
-                        ?>
-                    </table>
-                    <?php
-                }
-                else
-                {
-                    //Empty schedule response
-                    echo "Your schedule is empty.";
-                }
-            }
-            else
-            {
-                //Not logged in
-                echo "You must login to use this feature.";
-            }
-            ?>
+                <tr>
+                    <td>ois12</td>
+                    <td>08:45</td>
+                    <td>10:15</td>
+                </tr>
+                <tr>
+                    <td>ois12</td>
+                    <td>10:30</td>
+                    <td>12:00</td>
+                </tr>
+            </table>
             <p class="font_weight_normal">For more info, go to: <a class="font_weight_normal" target="_blank" href="/pluff">Pluff</a></p>
         </section>
+
 
         <!--Weather block-->
         <section class="block" id="weather">
